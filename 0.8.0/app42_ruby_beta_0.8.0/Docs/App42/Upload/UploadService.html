@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42::Upload::UploadService - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-get_all_files">#get_all_files</a>
+    
+    <li><a href="#method-i-get_all_files_by_paging">#get_all_files_by_paging</a>
+    
+    <li><a href="#method-i-get_all_files_by_user">#get_all_files_by_user</a>
+    
+    <li><a href="#method-i-get_all_files_by_user_by_paging">#get_all_files_by_user_by_paging</a>
+    
+    <li><a href="#method-i-get_all_files_count">#get_all_files_count</a>
+    
+    <li><a href="#method-i-get_all_files_count_by_user">#get_all_files_count_by_user</a>
+    
+    <li><a href="#method-i-get_file_by_name">#get_file_by_name</a>
+    
+    <li><a href="#method-i-get_file_by_user">#get_file_by_user</a>
+    
+    <li><a href="#method-i-get_files_by_type">#get_files_by_type</a>
+    
+    <li><a href="#method-i-get_files_by_type_by_paging">#get_files_by_type_by_paging</a>
+    
+    <li><a href="#method-i-get_files_count_by_type">#get_files_count_by_type</a>
+    
+    <li><a href="#method-i-remove_all_files">#remove_all_files</a>
+    
+    <li><a href="#method-i-remove_all_files_by_user">#remove_all_files_by_user</a>
+    
+    <li><a href="#method-i-remove_file_by_name">#remove_file_by_name</a>
+    
+    <li><a href="#method-i-remove_file_by_user">#remove_file_by_user</a>
+    
+    <li><a href="#method-i-upload_file">#upload_file</a>
+    
+    <li><a href="#method-i-upload_file_by_stream">#upload_file_by_stream</a>
+    
+    <li><a href="#method-i-upload_file_for_user">#upload_file_for_user</a>
+    
+    <li><a href="#method-i-upload_file_for_user_by_stream">#upload_file_for_user_by_stream</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../App42.html">App42</a>
+  
+    <li><a href="../../App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="../../App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="../../App42/Email.html">App42::Email</a>
+  
+    <li><a href="../../App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="../../App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="../../App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="../../App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="../../App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="../../App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="../../App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="../../App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="../../App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="../../App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="../../App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="../../App42/Game.html">App42::Game</a>
+  
+    <li><a href="../../App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="../../App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="../../App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="../../App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="../../App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="../../App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="../../App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="../../App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="../../App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="../../App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="../../App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="../../App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="../../App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="../../App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="../../App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="../../App42/Log.html">App42::Log</a>
+  
+    <li><a href="../../App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="../../App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="../../App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="../../App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="../../App42/Message.html">App42::Message</a>
+  
+    <li><a href="../../App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="../../App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="../../App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="../../App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="../../App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="../../App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="../../App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="../../App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="../../App42/Review.html">App42::Review</a>
+  
+    <li><a href="../../App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="../../App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="../../App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="../../App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="../../App42/Session.html">App42::Session</a>
+  
+    <li><a href="../../App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="../../App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="../../App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="../../App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="../../App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="../../App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="../../App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="../../App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="../../App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="../../App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="../../App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="../../App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="../../App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="../../App42/Social.html">App42::Social</a>
+  
+    <li><a href="../../App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="../../App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="../../App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="../../App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="../../App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="../../App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="../../App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="../../App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="../../App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="../../App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="../../App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="../../App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="../../App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="../../App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="../../App42/User.html">App42::User</a>
+  
+    <li><a href="../../App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="../../App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="../../App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="../../App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="../../App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="../../App42/Util.html">App42::Util</a>
+  
+    <li><a href="../../App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="../../App42Exception.html">App42Exception</a>
+  
+    <li><a href="../../App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="../../App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="../../App42Response.html">App42Response</a>
+  
+    <li><a href="../../App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="../../App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42::Upload::UploadService</h1>
+
+  <div id="description" class="description">
+    
+<p>Uploads file on the cloud. Allows access to the files through url. Its
+especially useful for Mobile/Device apps. It minimizes the App footprint on
+the device. @see <a href="Upload.html">Upload</a> @see <a
+href="../../App42Response.html">App42Response</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_key, secret_key, base_url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;File Upload-&gt;initialize&quot;</span>
+  <span class="ruby-ivar">@api_key</span> = <span class="ruby-identifier">api_key</span>
+  <span class="ruby-ivar">@secret_key</span> = <span class="ruby-identifier">secret_key</span>
+  <span class="ruby-ivar">@base_url</span> = <span class="ruby-identifier">base_url</span>
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-string">&quot;upload&quot;</span>
+  <span class="ruby-ivar">@version</span> = <span class="ruby-string">&quot;1.0&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-get_all_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets all the files for the App @return <a href="Upload.html">Upload</a>
+object @raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_all_files-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 391</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_files</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get All Files Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Response is #{response}&quot;</span>
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_files-method -->
+
+    
+      <div id="method-i-get_all_files_by_paging" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_files_by_paging</span><span
+            class="method-args">(max, offset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets all the files By Paging for the App @param max Maximum number of
+records to be fetched @param offset From where the records are to be
+fetched @return <a href="Upload.html">Upload</a> object</p>
+          
+
+          
+          <div class="method-source-code" id="get_all_files_by_paging-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_files_by_paging</span>(<span class="ruby-identifier">max</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAllFilesByPaging Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateMax</span>(<span class="ruby-identifier">max</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">max</span>, <span class="ruby-string">&quot;Max&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-string">&quot;Offset&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;max&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">max</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;offset&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">offset</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/paging/#{(max.to_i).to_s}/#{(offset.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_files_by_paging-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_files_by_paging-method -->
+
+    
+      <div id="method-i-get_all_files_by_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_files_by_user</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the file based on user name. @param userName The name of the user for
+which file has to be retrieved @return <a href="Upload.html">Upload</a>
+object @raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_all_files_by_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 468</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_files_by_user</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAllFilesByUser Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;userName&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/user/#{userName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Response is #{response}&quot;</span>
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_files_by_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_files_by_user-method -->
+
+    
+      <div id="method-i-get_all_files_by_user_by_paging" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_files_by_user_by_paging</span><span
+            class="method-args">(userName, max, offset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the file based on user name by Paging. @param userName The name of the
+user for which file has to be retrieved @param max Maximum number of
+records to be fetched @param offset From where the records are to be
+fetched @return <a href="Upload.html">Upload</a> object</p>
+          
+
+          
+          <div class="method-source-code" id="get_all_files_by_user_by_paging-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 302</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_files_by_user_by_paging</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-identifier">max</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAllFilesByPaging Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateMax</span>(<span class="ruby-identifier">max</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">max</span>, <span class="ruby-string">&quot;Max&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-string">&quot;Offset&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;max&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">max</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;offset&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">offset</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/user/#{userName}/#{(max.to_i).to_s}/#{(offset.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_files_by_user_by_paging-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_files_by_user_by_paging-method -->
+
+    
+      <div id="method-i-get_all_files_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_files_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets count of all the files for the App @return <a
+href="../../App42Response.html">App42Response</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_all_files_count-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 725</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_files_count</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;get_all_files_count Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/count&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">getTotalRecords</span>(<span class="ruby-identifier">response</span>);
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_files_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_files_count-method -->
+
+    
+      <div id="method-i-get_all_files_count_by_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_files_count_by_user</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the count of file based on user name. @param userName The name of the
+user for which count of the file has to be retrieved @return <a
+href="../../App42Response.html">App42Response</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_all_files_count_by_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 762</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_files_count_by_user</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;get_all_files_count_by_user Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/user/#{userName}/count&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">getTotalRecords</span>(<span class="ruby-identifier">response</span>);
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_files_count_by_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_files_count_by_user-method -->
+
+    
+      <div id="method-i-get_file_by_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_file_by_name</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the file based on file name. @param name The name of the file which
+has to be retrieved @return <a href="Upload.html">Upload</a> object @raise
+<a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_file_by_name-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 506</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_file_by_name</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get File By Name Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;File Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{name}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_file_by_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_file_by_name-method -->
+
+    
+      <div id="method-i-get_file_by_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_file_by_user</span><span
+            class="method-args">(name, userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the file based on user name. @param name The name of the file which
+has to be retrieved @param userName The name of the user for which file has
+to be retrieved @return <a href="Upload.html">Upload</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_file_by_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_file_by_user</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get File By User Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;File Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}/#{name}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Response is #{response}&quot;</span>
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_file_by_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_file_by_user-method -->
+
+    
+      <div id="method-i-get_files_by_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_files_by_type</span><span
+            class="method-args">(uploadFileType)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the files based on file type. @param uploadFileType Type of the file
+e.g. <a href="Upload.html">Upload</a>.AUDIO, <a
+href="Upload.html">Upload</a>.XML etc. @return  <a
+href="Upload.html">Upload</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_files_by_type-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 686</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_files_by_type</span>(<span class="ruby-identifier">uploadFileType</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;get Files By Type Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uploadFileType</span>, <span class="ruby-string">&quot;uploadFileType&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">uploadFileType</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Upload File Type #{uploadFileType} does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;type&quot;</span>, <span class="ruby-identifier">uploadFileType</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/type/#{uploadFileType}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_files_by_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_files_by_type-method -->
+
+    
+      <div id="method-i-get_files_by_type_by_paging" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_files_by_type_by_paging</span><span
+            class="method-args">(uploadFileType, max, offset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the files based on file type by Paging. @param uploadFileType Type of
+the file e.g. <a href="Upload.html">Upload</a>.AUDIO, <a
+href="Upload.html">Upload</a>.XML etc. @param max Maximum number of records
+to be fetched @param offset From where the records are to be fetched
+@return <a href="Upload.html">Upload</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_files_by_type_by_paging-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_files_by_type_by_paging</span>(<span class="ruby-identifier">uploadFileType</span>, <span class="ruby-identifier">max</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;get_files_by_type_by_paging Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateMax</span>(<span class="ruby-identifier">max</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uploadFileType</span>, <span class="ruby-string">&quot;uploadFileType&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">max</span>, <span class="ruby-string">&quot;Max&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-string">&quot;Offset&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">uploadFileType</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Upload File Type #{uploadFileType} does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;type&quot;</span>, <span class="ruby-identifier">uploadFileType</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;max&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">max</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;offset&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">offset</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/type/#{uploadFileType}/#{(max.to_i).to_s}/#{(offset.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_files_by_type_by_paging-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_files_by_type_by_paging-method -->
+
+    
+      <div id="method-i-get_files_count_by_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_files_count_by_type</span><span
+            class="method-args">(uploadFileType)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the count of files based on file type. @param uploadFileType Type of
+the file e.g. <a href="Upload.html">Upload</a>.AUDIO, <a
+href="Upload.html">Upload</a>.XML etc. @return <a
+href="../../App42Response.html">App42Response</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_files_count_by_type-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 801</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_files_count_by_type</span>(<span class="ruby-identifier">uploadFileType</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getFilesCountByType Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uploadFileType</span>, <span class="ruby-string">&quot;uploadFileType&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;type&quot;</span>, <span class="ruby-identifier">uploadFileType</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/type/#{uploadFileType}/count&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">getTotalRecords</span>(<span class="ruby-identifier">response</span>);
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_files_count_by_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_files_count_by_type-method -->
+
+    
+      <div id="method-i-remove_all_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_all_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes all the files for the App @return <a
+href="../../App42Response.html">App42Response</a> if deleted successfully
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="remove_all_files-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 653</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_all_files</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Remove File By Name Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_all_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_all_files-method -->
+
+    
+      <div id="method-i-remove_all_files_by_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_all_files_by_user</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes the file based on user name. @param userName The name of the user
+for which file has to be removed @return <a
+href="../../App42Response.html">App42Response</a> if deleted successfully
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="remove_all_files_by_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 582</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_all_files_by_user</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;remove_all_files_by_user Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/user/#{userName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_all_files_by_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_all_files_by_user-method -->
+
+    
+      <div id="method-i-remove_file_by_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_file_by_name</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes the file based on file name. @param name The name of the file which
+has to be removed @return <a
+href="../../App42Response.html">App42Response</a> if deleted successfully
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="remove_file_by_name-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 618</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_file_by_name</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Remove File By Name Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{name}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_file_by_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_file_by_name-method -->
+
+    
+      <div id="method-i-remove_file_by_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_file_by_user</span><span
+            class="method-args">(name, userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes the file based on file name and user name. @param name The name of
+the file which has to be removed @param userName The name of the user for
+which file has to be removed @return <a
+href="../../App42Response.html">App42Response</a> if deleted successfully
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="remove_file_by_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 544</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_file_by_user</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;remove_file_by_user Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;File Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}/#{name}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_file_by_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_file_by_user-method -->
+
+    
+      <div id="method-i-upload_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upload_file</span><span
+            class="method-args">(name, filePath, fileType, description)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Uploads file on the cloud. @params name The name for the file which has to
+be saved. It is used to retrieve the file @params filePath The local path
+for the file @params fileType The type of the file. <a
+href="File.html">File</a> can be either Audio, Video, Image, Binary, Txt,
+xml, json, csv or other Use the static constants e.g. <a
+href="Upload.html">Upload</a>.AUDIO, <a href="Upload.html">Upload</a>.XML
+etc. @params description Description of the file to be uploaded. @return <a
+href="Upload.html">Upload</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="upload_file-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload_file</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">filePath</span>, <span class="ruby-identifier">fileType</span>, <span class="ruby-identifier">description</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;upload File Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">filePath</span>, <span class="ruby-string">&quot;Filepath&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">fileType</span>, <span class="ruby-string">&quot;fileType&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">description</span>, <span class="ruby-string">&quot;Description&quot;</span>);
+  <span class="ruby-keyword">if</span> (<span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">filePath</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;The file with the name #{filePath} not found&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">fileType</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Upload File Type #{fileType} does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>
+    }
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">query_params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">post_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>);
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;type&quot;</span>, <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">enum</span>(<span class="ruby-identifier">fileType</span>))
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;description&quot;</span>, <span class="ruby-identifier">description</span>);
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">post_params</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">multipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">filePath</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- upload_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- upload_file-method -->
+
+    
+      <div id="method-i-upload_file_by_stream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upload_file_by_stream</span><span
+            class="method-args">(name, inputStream, fileType, description)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Uploads file on the cloud. @param name The name for the file which has to
+be saved. It is used to retrieve the file @param inputStream InputStream of
+the file to be uploaded. @param fileType The type of the file. <a
+href="File.html">File</a> can be either Audio, Video, Image, Binary, Txt,
+xml, json, csv or other Use the static constants e.g. <a
+href="Upload.html">Upload</a>.AUDIO, <a href="Upload.html">Upload</a>.XML
+etc. @param description Description of the file to be uploaded. @return <a
+href="Upload.html">Upload</a> object @throws <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="upload_file_by_stream-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload_file_by_stream</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">inputStream</span>, <span class="ruby-identifier">fileType</span>, <span class="ruby-identifier">description</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;upload File Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNotValidExtension</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;File Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">fileType</span>, <span class="ruby-string">&quot;fileType&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">description</span>, <span class="ruby-string">&quot;Description&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>
+    }
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">query_params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">post_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>);
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;type&quot;</span>, <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">enum</span>(<span class="ruby-identifier">fileType</span>))
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;description&quot;</span>, <span class="ruby-identifier">description</span>);
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">post_params</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">multipartStream</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">inputStream</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- upload_file_by_stream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- upload_file_by_stream-method -->
+
+    
+      <div id="method-i-upload_file_for_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upload_file_for_user</span><span
+            class="method-args">(name, userName, filePath, fileType, description)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Uploads file on the cloud for given user. @param name The name for the file
+which has to be saved. It is used to retrieve the file @param userName The
+name for the user for which file has to be saved. @param filePath The local
+path for the file @param fileType The type of the file. <a
+href="File.html">File</a> can be either Audio, Video, Image, Binary, Txt,
+xml, json, csv or other Use the static constants e.g. <a
+href="Upload.html">Upload</a>.AUDIO, <a href="Upload.html">Upload</a>.XML
+etc. @param description Description of the file to be uploaded. @return <a
+href="Upload.html">Upload</a> object @throws <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="upload_file_for_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload_file_for_user</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">userName</span>, <span class="ruby-identifier">filePath</span>, <span class="ruby-identifier">fileType</span>, <span class="ruby-identifier">description</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;File Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">filePath</span>, <span class="ruby-string">&quot;Filepath&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">fileType</span>, <span class="ruby-string">&quot;fileType&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">description</span>, <span class="ruby-string">&quot;Description&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>
+    }
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">query_params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">post_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>);
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;type&quot;</span>, <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">enum</span>(<span class="ruby-identifier">fileType</span>))
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;description&quot;</span>, <span class="ruby-identifier">description</span>);
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">post_params</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">multipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">filePath</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- upload_file_for_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- upload_file_for_user-method -->
+
+    
+      <div id="method-i-upload_file_for_user_by_stream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upload_file_for_user_by_stream</span><span
+            class="method-args">(name, userName, inputStream, fileType, description)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Uploads file on the cloud. @param name The name for the file which has to
+be saved. It is used to retrieve the file @param userName The name for the
+user for which file has to be saved. @param filePath The local path for the
+file @param uploadFileType The type of the file. <a
+href="File.html">File</a> can be either Audio, Video, Image, Binary, Txt,
+xml, json, csv or other Use the static constants e.g. <a
+href="Upload.html">Upload</a>.AUDIO, <a href="Upload.html">Upload</a>.XML
+etc. @param description Description of the file to be uploaded. @return <a
+href="Upload.html">Upload</a> object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="upload_file_for_user_by_stream-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/upload/UploadService.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload_file_for_user_by_stream</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">userName</span>, <span class="ruby-identifier">inputStream</span>, <span class="ruby-identifier">fileType</span>, <span class="ruby-identifier">description</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-constant">Upload</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">uploadObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;File Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNotValidExtension</span>(<span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;File Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">fileType</span>, <span class="ruby-string">&quot;fileType&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">description</span>, <span class="ruby-string">&quot;Description&quot;</span>);
+  <span class="ruby-keyword">if</span> (<span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">filePath</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;The file with the name #{filePath} not found&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">fileType</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Upload File Type #{fileType} does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>
+    }
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">query_params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">post_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadFileType</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">name</span>);
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;type&quot;</span>, <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">enum</span>(<span class="ruby-identifier">fileType</span>))
+    <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;description&quot;</span>, <span class="ruby-identifier">description</span>);
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">multipartStream</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">inputStream</span>)
+    <span class="ruby-identifier">upload</span> = <span class="ruby-constant">UploadResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">uploadObj</span> = <span class="ruby-identifier">upload</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">uploadObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- upload_file_for_user_by_stream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- upload_file_for_user_by_stream-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

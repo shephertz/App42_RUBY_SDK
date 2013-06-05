@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42::User::UserService - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/user/UserService.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-assign_roles">#assign_roles</a>
+    
+    <li><a href="#method-i-authenticate">#authenticate</a>
+    
+    <li><a href="#method-i-change_user_password">#change_user_password</a>
+    
+    <li><a href="#method-i-create_or_update_profile">#create_or_update_profile</a>
+    
+    <li><a href="#method-i-create_user">#create_user</a>
+    
+    <li><a href="#method-i-create_user_with_role">#create_user_with_role</a>
+    
+    <li><a href="#method-i-delete_user">#delete_user</a>
+    
+    <li><a href="#method-i-fill_params_with_profile_data">#fill_params_with_profile_data</a>
+    
+    <li><a href="#method-i-get_all_users">#get_all_users</a>
+    
+    <li><a href="#method-i-get_all_users_by_paging">#get_all_users_by_paging</a>
+    
+    <li><a href="#method-i-get_all_users_count">#get_all_users_count</a>
+    
+    <li><a href="#method-i-get_locked_users">#get_locked_users</a>
+    
+    <li><a href="#method-i-get_locked_users_by_paging">#get_locked_users_by_paging</a>
+    
+    <li><a href="#method-i-get_locked_users_count">#get_locked_users_count</a>
+    
+    <li><a href="#method-i-get_roles_by_user">#get_roles_by_user</a>
+    
+    <li><a href="#method-i-get_user">#get_user</a>
+    
+    <li><a href="#method-i-get_user_by_email_id">#get_user_by_email_id</a>
+    
+    <li><a href="#method-i-get_users_by_profile_data">#get_users_by_profile_data</a>
+    
+    <li><a href="#method-i-get_users_by_role">#get_users_by_role</a>
+    
+    <li><a href="#method-i-lock_user">#lock_user</a>
+    
+    <li><a href="#method-i-reset_user_password">#reset_user_password</a>
+    
+    <li><a href="#method-i-revoke_all_roles">#revoke_all_roles</a>
+    
+    <li><a href="#method-i-revoke_role">#revoke_role</a>
+    
+    <li><a href="#method-i-unlock_user">#unlock_user</a>
+    
+    <li><a href="#method-i-update_email">#update_email</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../App42.html">App42</a>
+  
+    <li><a href="../../App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="../../App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="../../App42/Email.html">App42::Email</a>
+  
+    <li><a href="../../App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="../../App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="../../App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="../../App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="../../App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="../../App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="../../App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="../../App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="../../App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="../../App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="../../App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="../../App42/Game.html">App42::Game</a>
+  
+    <li><a href="../../App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="../../App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="../../App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="../../App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="../../App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="../../App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="../../App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="../../App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="../../App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="../../App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="../../App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="../../App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="../../App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="../../App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="../../App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="../../App42/Log.html">App42::Log</a>
+  
+    <li><a href="../../App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="../../App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="../../App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="../../App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="../../App42/Message.html">App42::Message</a>
+  
+    <li><a href="../../App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="../../App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="../../App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="../../App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="../../App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="../../App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="../../App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="../../App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="../../App42/Review.html">App42::Review</a>
+  
+    <li><a href="../../App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="../../App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="../../App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="../../App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="../../App42/Session.html">App42::Session</a>
+  
+    <li><a href="../../App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="../../App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="../../App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="../../App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="../../App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="../../App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="../../App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="../../App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="../../App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="../../App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="../../App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="../../App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="../../App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="../../App42/Social.html">App42::Social</a>
+  
+    <li><a href="../../App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="../../App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="../../App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="../../App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="../../App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="../../App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="../../App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="../../App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="../../App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="../../App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="../../App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="../../App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="../../App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="../../App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="../../App42/User.html">App42::User</a>
+  
+    <li><a href="../../App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="../../App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="../../App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="../../App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="../../App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="../../App42/Util.html">App42::Util</a>
+  
+    <li><a href="../../App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="../../App42Exception.html">App42Exception</a>
+  
+    <li><a href="../../App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="../../App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="../../App42Response.html">App42Response</a>
+  
+    <li><a href="../../App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="../../App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42::User::UserService</h1>
+
+  <div id="description" class="description">
+    
+<p>Creates <a href="User.html">User</a> for the App. <a
+href="../../App42.html">App42</a> Cloud API's provides a complete <a
+href="User.html">User</a> Management for any Mobile or Web App. It supports
+<a href="User.html">User</a> registration, retrieval, state management e.g.
+lock, delete and Authentication. Along with <a href="User.html">User</a>
+Management the platform provides API's for persistent SessionManagement
+@see SessionService @see <a href="User.html">User</a> @see <a
+href="../../App42Response.html">App42Response</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_key, secret_key, base_url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;UserService-&gt;initialize&quot;</span>
+  <span class="ruby-ivar">@api_key</span> = <span class="ruby-identifier">api_key</span>
+  <span class="ruby-ivar">@secret_key</span> = <span class="ruby-identifier">secret_key</span>
+  <span class="ruby-ivar">@base_url</span> = <span class="ruby-identifier">base_url</span>
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-string">&quot;user&quot;</span>
+  <span class="ruby-ivar">@version</span> = <span class="ruby-string">&quot;1.0&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-assign_roles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assign_roles</span><span
+            class="method-args">(uName, roleList)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add Role for the App @param uName UserName which should be unique for the
+App @param roleList list of roles to be added to <a
+href="User.html">User</a> @return The created <a href="User.html">User</a>
+Object. @throws <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="assign_roles-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 1003</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assign_roles</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-identifier">roleList</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;assignRoles Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">roleList</span>, <span class="ruby-string">&quot;RoleList&quot;</span>);
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">roleList</span>.<span class="ruby-identifier">size</span>() <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;RoleList cannot be empty.Please assign atleast one role&quot;</span>);
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">roleArray</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">role</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">roleList</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">roleArray</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">role</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;roles&quot;</span> =<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;role&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">roleArray</span>
+      }}}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/assignrole&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assign_roles-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assign_roles-method -->
+
+    
+      <div id="method-i-authenticate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">authenticate</span><span
+            class="method-args">(uName, pwd)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Authenticate user based on userName and password @params uName UserName
+which should be unique for the App @params pwd Password for the <a
+href="User.html">User</a> @returns Whether the user is authenticated or
+not. @raise <a href="../../App42Exception.html">App42Exception</a> if
+authentication fails or username/password is blank or null</p>
+          
+
+          
+          <div class="method-source-code" id="authenticate-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">authenticate</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-identifier">pwd</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;authenticateUser Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">pwd</span>, <span class="ruby-string">&quot;Password&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>,
+      <span class="ruby-string">&quot;password&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pwd</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/authenticate&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- authenticate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- authenticate-method -->
+
+    
+      <div id="method-i-change_user_password" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_user_password</span><span
+            class="method-args">(uName, oldPwd, newPwd)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Change the password for user based on the userName. @params uName UserName
+which should be unique for the App @params oldPwd Old Password for the user
+for authentication @params newPwd New Password for the user to change
+@returns <a href="../../App42Response.html">App42Response</a> Object if
+updated successfully @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="change_user_password-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 587</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_user_password</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-identifier">oldPwd</span>, <span class="ruby-identifier">newPwd</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;changeUserPassword Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">oldPwd</span>, <span class="ruby-string">&quot;Old Password&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">newPwd</span>, <span class="ruby-string">&quot;New Password&quot;</span>);
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">oldPwd</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">newPwd</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Old password and new password are same&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>,
+      <span class="ruby-string">&quot;oldPassword&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">oldPwd</span>,
+      <span class="ruby-string">&quot;newPassword&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">newPwd</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/changeUserPassword&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- change_user_password-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- change_user_password-method -->
+
+    
+      <div id="method-i-create_or_update_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_or_update_profile</span><span
+            class="method-args">(user)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates or Updates <a href="User.html">User</a> <a
+href="Profile.html">Profile</a>. First time the <a
+href="Profile.html">Profile</a> for the user is created and in future calls
+user profile will be updated. This will always update the profile with new
+value passed in profile object. Call to this method should have all the
+values you want to retain in user profile object, otherwise old values of
+profile will get updated with null. Method only updates the profile of
+user, passing email/password in user object does not have any significance
+for this method call. @params user - <a href="User.html">User</a> for which
+profile has to be updated, this should contain the userName and profile
+object in it. @returns <a href="User.html">User</a> Object with updated <a
+href="Profile.html">Profile</a> information @raise <a
+href="../../App42Exception.html">App42Exception</a> @see <a
+href="Profile.html">Profile</a></p>
+          
+
+          
+          <div class="method-source-code" id="create_or_update_profile-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_or_update_profile</span>(<span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">userResponse</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">userResponse</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">user</span>, <span class="ruby-string">&quot;User&quot;</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">profile</span>, <span class="ruby-string">&quot;Profile Data&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">profile</span>= <span class="ruby-identifier">user</span>.<span class="ruby-identifier">profile</span>();
+    <span class="ruby-identifier">profileObj</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;firstName&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">firstName</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;lastName&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">lastName</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;sex&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">sex</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;mobile&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">mobile</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;line1&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">line1</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;line2&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">line2</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;city&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">city</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;state&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">state</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;country&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">country</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;pincode&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">pincode</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;homeLandLine&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">homeLandLine</span>());
+    <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;officeLandLine&quot;</span>, <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">officeLandLine</span>());
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">profile</span>.<span class="ruby-identifier">dateOfBirth</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">profileObj</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;dateOfBirth&quot;</span>, <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc_from_date</span>(<span class="ruby-identifier">profile</span>.<span class="ruby-identifier">dateOfBirth</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">body</span> = {
+      <span class="ruby-string">'app42'</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span>{
+      <span class="ruby-string">&quot;userName&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">user</span>.<span class="ruby-identifier">userName</span>,
+      <span class="ruby-string">&quot;profileData&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">profileObj</span>
+      }
+      }
+    }.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/profile&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">userResponse</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">userResponse</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_or_update_profile-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_or_update_profile-method -->
+
+    
+      <div id="method-i-create_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_user</span><span
+            class="method-args">(uName, pwd, emailAddress)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create <a href="User.html">User</a> for the App @params uName UserName
+which should be unique for the App @params pwd Password for the <a
+href="User.html">User</a> @params emailAddress <a
+href="../Email.html">Email</a> address of the user @return The created <a
+href="User.html">User</a> Object. @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="create_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_user</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-identifier">pwd</span>, <span class="ruby-identifier">emailAddress</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Create User Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">pwd</span>, <span class="ruby-string">&quot;Password&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfEmailNotValid</span>(<span class="ruby-identifier">emailAddress</span>, <span class="ruby-string">&quot;EmailAddress&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">emailAddress</span>, <span class="ruby-string">&quot;EmailAddress&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>,
+      <span class="ruby-string">&quot;password&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pwd</span>,
+      <span class="ruby-string">&quot;email&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">emailAddress</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_user-method -->
+
+    
+      <div id="method-i-create_user_with_role" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_user_with_role</span><span
+            class="method-args">(uName, pwd, emailAddress, roleList)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create <a href="User.html">User</a> for the App @param uName UserName which
+should be unique for the App @param pwd Password for the <a
+href="User.html">User</a> @param emailAddress <a
+href="../Email.html">Email</a> address of the user @param roleList list of
+roles to be assigned to <a href="User.html">User</a> @return The created <a
+href="User.html">User</a> Object. @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="create_user_with_role-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 709</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_user_with_role</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-identifier">pwd</span>, <span class="ruby-identifier">emailAddress</span>, <span class="ruby-identifier">roleList</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Create User Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">pwd</span>, <span class="ruby-string">&quot;Password&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfEmailNotValid</span>(<span class="ruby-identifier">emailAddress</span>, <span class="ruby-string">&quot;EmailAddress&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">emailAddress</span>, <span class="ruby-string">&quot;EmailAddress&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">roleList</span>, <span class="ruby-string">&quot;RoleList&quot;</span>);
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">roleList</span>.<span class="ruby-identifier">size</span>() <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;RoleList cannot be empty.Please assign atleast one role&quot;</span>);
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">roleArray</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">role</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">roleList</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">roleArray</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">role</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;email&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">emailAddress</span>,
+      <span class="ruby-string">&quot;password&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pwd</span>,
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;roles&quot;</span> =<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;role&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">roleArray</span>
+      }}}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/role&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_user_with_role-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_user_with_role-method -->
+
+    
+      <div id="method-i-delete_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_user</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes a particular user based on userName. @params userName UserName
+which should be unique for the App @returns <a
+href="../../App42Response.html">App42Response</a> Object if user deleted
+successfully @raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="delete_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_user</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Delete User Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_user-method -->
+
+    
+      <div id="method-i-fill_params_with_profile_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fill_params_with_profile_data</span><span
+            class="method-args">(profileData)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a Parameter string from the profileData. @param profileData <a
+href="User.html">User</a>.<a href="Profile.html">Profile</a> object that
+contains User's <a href="Profile.html">Profile</a> information @returns
+String Object which contains the parameter string. @throws <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="fill_params_with_profile_data-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 1054</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fill_params_with_profile_data</span>(<span class="ruby-identifier">profileData</span>)
+  <span class="ruby-identifier">profileDataCond</span> = <span class="ruby-string">&quot;&quot;</span>;
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">city</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">city</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;city:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">city</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">country</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">country</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;country:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">country</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">dateOfBirth</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">dateOfBirth</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;date_of_birth:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">dateOfBirth</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">firstName</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">firstName</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;first_name:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">firstName</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">lastName</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">lastName</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;last_name:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">lastName</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">homeLandLine</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">homeLandLine</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;home_land_line:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">homeLandLine</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">line1</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">line1</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;line1:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">line1</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">line2</span>() <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">line2</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;line2:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">line2</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">mobile</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">mobile</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;mobile:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">mobile</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">officeLandLine</span>() <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">officeLandLine</span>.<span class="ruby-identifier">equals</span>(<span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;office_land_line:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">officeLandLine</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">pincode</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">pincode</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;pincode:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">pincode</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">sex</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">sex</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;sex:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">sex</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">state</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">state</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">profileDataCond</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;state:&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">profileData</span>.<span class="ruby-identifier">state</span>()<span class="ruby-operator">+</span><span class="ruby-string">&quot;!&quot;</span>;
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">profileDataCond</span>;
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fill_params_with_profile_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fill_params_with_profile_data-method -->
+
+    
+      <div id="method-i-get_all_users" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_users</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets All users details @returnReturns the list that contains all <a
+href="User.html">User</a> Object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_all_users-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_users</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get All Users Called&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">userList</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">userList</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">userList</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">userList</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_users-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_users-method -->
+
+    
+      <div id="method-i-get_all_users_by_paging" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_users_by_paging</span><span
+            class="method-args">(max, offset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets All users By Paging @param max Maximum number of records to be fetched
+@param offset From where the records are to be fetched @return Returns <a
+href="User.html">User</a> Information</p>
+          
+
+          
+          <div class="method-source-code" id="get_all_users_by_paging-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 505</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_users_by_paging</span>(<span class="ruby-identifier">max</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAllUsersByPaging Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">userList</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">userList</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateMax</span>(<span class="ruby-identifier">max</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">max</span>, <span class="ruby-string">&quot;Max&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-string">&quot;Offset&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;max&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">max</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;offset&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">offset</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/paging/#{(max.to_i).to_s}/#{(offset.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">userList</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">userList</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_users_by_paging-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_users_by_paging-method -->
+
+    
+      <div id="method-i-get_all_users_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_all_users_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the count of all the users @return Returns the count of all <a
+href="User.html">User</a> exists @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_all_users_count-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 632</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_users_count</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAllUsersCount Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/count/all&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">getTotalRecords</span>(<span class="ruby-identifier">response</span>);
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_all_users_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_all_users_count-method -->
+
+    
+      <div id="method-i-get_locked_users" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_locked_users</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets All the locked users details @return Returns the list that contains
+locked <a href="User.html">User</a> Objects @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_locked_users-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_locked_users</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get Locked Users Called&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">userList</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">userList</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/locked&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">userList</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">userList</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_locked_users-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_locked_users-method -->
+
+    
+      <div id="method-i-get_locked_users_by_paging" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_locked_users_by_paging</span><span
+            class="method-args">(max, offset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets All the locked users By paging details @param max Maximum number of
+records to be fetched @param offset From where the records are to be
+fetched @return Returns <a href="User.html">User</a> Information</p>
+          
+
+          
+          <div class="method-source-code" id="get_locked_users_by_paging-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 546</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_locked_users_by_paging</span>(<span class="ruby-identifier">max</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;get_locked_users_by_paging Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">userList</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">userList</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateMax</span>(<span class="ruby-identifier">max</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">max</span>, <span class="ruby-string">&quot;Max&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-string">&quot;Offset&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;max&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">max</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;offset&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">offset</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/locked/#{(max.to_i).to_s}/#{(offset.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">userList</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">userList</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_locked_users_by_paging-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_locked_users_by_paging-method -->
+
+    
+      <div id="method-i-get_locked_users_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_locked_users_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the count of all the locked users @return Returns the count of locked
+<a href="User.html">User</a> exists @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_locked_users_count-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 666</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_locked_users_count</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getLockedUsersCount Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/count/locked&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">getTotalRecords</span>(<span class="ruby-identifier">response</span>);
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_locked_users_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_locked_users_count-method -->
+
+    
+      <div id="method-i-get_roles_by_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_roles_by_user</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get Roles based on userName @param userName UserName which should be unique
+for the App @return Returns <a href="User.html">User</a> Object @throws <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_roles_by_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 765</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_roles_by_user</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getRolesByUser Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}/roles&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_roles_by_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_roles_by_user-method -->
+
+    
+      <div id="method-i-get_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_user</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets user details based on userName @params userName UserName which should
+be unique for the App @return Returns <a href="User.html">User</a> Object
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_user</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get User Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_user-method -->
+
+    
+      <div id="method-i-get_user_by_email_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_user_by_email_id</span><span
+            class="method-args">(emailId)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets user details based on emailId @params emailId EmailId of the user to
+be retrieved @return Returns <a href="User.html">User</a> Object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_user_by_email_id-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_user_by_email_id</span>(<span class="ruby-identifier">emailId</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get All Users Called&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfEmailNotValid</span>(<span class="ruby-identifier">emailId</span>, <span class="ruby-string">&quot;EmailId&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">emailId</span>, <span class="ruby-string">&quot;EmailId&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;emailId&quot;</span>, <span class="ruby-identifier">emailId</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/email/#{emailId}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_user_by_email_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_user_by_email_id-method -->
+
+    
+      <div id="method-i-get_users_by_profile_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_users_by_profile_data</span><span
+            class="method-args">(profileData)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get Users based on <a href="Profile.html">Profile</a> Data @param
+profileData <a href="Profile.html">Profile</a> Data key/value for which
+Users need to be retrieved @return Returns Arraylist of <a
+href="User.html">User</a> Object for that particular role @throws <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_users_by_profile_data-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 917</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_users_by_profile_data</span>(<span class="ruby-identifier">profileData</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;get_users_by_profile_data Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">userList</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">userList</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">parameters</span> = <span class="ruby-string">&quot;&quot;</span>;
+  <span class="ruby-identifier">parameters</span> = <span class="ruby-identifier">fill_params_with_profile_data</span>(<span class="ruby-identifier">profileData</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/profile/#{parameters}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">userList</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">userList</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_users_by_profile_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_users_by_profile_data-method -->
+
+    
+      <div id="method-i-get_users_by_role" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_users_by_role</span><span
+            class="method-args">(role)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get Users based on Role @param role Role which should be unique for the App
+@return Returns <a href="User.html">User</a> Object @throws <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_users_by_role-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 803</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_users_by_role</span>(<span class="ruby-identifier">role</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;get_users_by_role Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">userList</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">userList</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">role</span>, <span class="ruby-string">&quot;Role&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;role&quot;</span>, <span class="ruby-identifier">role</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/role/#{role}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">userList</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">userList</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_users_by_role-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_users_by_role-method -->
+
+    
+      <div id="method-i-lock_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lock_user</span><span
+            class="method-args">(uName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Locks the user based on the userName. Apps can use these feature to lock a
+user because of reasons specific to their usercase e.g. If payment not
+received and the App wants the user to be inactive @params uName UserName
+which should be unique for the App @returns  Returns the locked <a
+href="User.html">User</a> Object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="lock_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lock_user</span>(<span class="ruby-identifier">uName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Lock User Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/lock&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lock_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lock_user-method -->
+
+    
+      <div id="method-i-reset_user_password" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset_user_password</span><span
+            class="method-args">(uName,password)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Updates the <a href="User.html">User</a> based on userName. Note: Only
+email can be updated. Username cannot be updated. @param uName UserName
+which should be unique for the App @param emailAddress <a
+href="../Email.html">Email</a> address of the user @returns updated <a
+href="User.html">User</a> Object @throws <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="reset_user_password-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 958</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_user_password</span>(<span class="ruby-identifier">uName</span>,<span class="ruby-identifier">password</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;resetUserPassword Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">password</span>, <span class="ruby-string">&quot;password&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>,
+      <span class="ruby-string">&quot;password&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">password</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/resetUserPassword&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset_user_password-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset_user_password-method -->
+
+    
+      <div id="method-i-revoke_all_roles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">revoke_all_roles</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Revokes the specified role from the user. @param userName UserName which
+should be unique for the App @returns <a
+href="../../App42Response.html">App42Response</a> Object if user deleted
+successfully @throws <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="revoke_all_roles-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 880</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">revoke_all_roles</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;revoke_all_roles Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}/revoke&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- revoke_all_roles-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- revoke_all_roles-method -->
+
+    
+      <div id="method-i-revoke_role" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">revoke_role</span><span
+            class="method-args">(userName, role)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Revokes the specified role from the user. @param userName UserName which
+should be unique for the App @returns <a
+href="../../App42Response.html">App42Response</a> Object if user deleted
+successfully @throws <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="revoke_role-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 841</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">revoke_role</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-identifier">role</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;revoke_role Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">role</span>, <span class="ruby-string">&quot;Role&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;role&quot;</span>, <span class="ruby-identifier">role</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}/revoke/#{role}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- revoke_role-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- revoke_role-method -->
+
+    
+      <div id="method-i-unlock_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unlock_user</span><span
+            class="method-args">(uName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unlock the user based on the userName. Apps can use these feature to unlock
+a user because of reasons specific to their usercase e.g. If payment
+received and the App wants to the user to be active. @params uName UserName
+which should be unique for the App @returns Returns the unlocked <a
+href="User.html">User</a> Object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="unlock_user-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 463</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unlock_user</span>(<span class="ruby-identifier">uName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;unlockUser Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/unlock&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unlock_user-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unlock_user-method -->
+
+    
+      <div id="method-i-update_email" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_email</span><span
+            class="method-args">(uName, emailAddress)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Updates the <a href="User.html">User</a> based on userName. Note: Only
+email can be updated. Username cannot be updated. @params uName UserName
+which should be unique for the App @params emailAddress <a
+href="../Email.html">Email</a> address of the user @returns updated <a
+href="User.html">User</a> Object @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="update_email-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/user/UserService.rb, line 377</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_email</span>(<span class="ruby-identifier">uName</span>,  <span class="ruby-identifier">emailAddress</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Update User Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">usr</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">usr</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">uName</span>, <span class="ruby-string">&quot;UserName&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">emailAddress</span>, <span class="ruby-string">&quot;EmailAddress&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">emailAddress</span>, <span class="ruby-string">&quot;Email Address&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;user&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;userName&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uName</span>,
+      <span class="ruby-string">&quot;email&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">emailAddress</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">UserResponseBuilder</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">usr</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">usr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_email-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_email-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

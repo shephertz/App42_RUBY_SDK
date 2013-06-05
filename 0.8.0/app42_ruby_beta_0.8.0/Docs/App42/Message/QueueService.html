@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42::Message::QueueService - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-create_pull_queue">#create_pull_queue</a>
+    
+    <li><a href="#method-i-delete_pull_queue">#delete_pull_queue</a>
+    
+    <li><a href="#method-i-get_messages">#get_messages</a>
+    
+    <li><a href="#method-i-pending_messages">#pending_messages</a>
+    
+    <li><a href="#method-i-purge_pull_queue">#purge_pull_queue</a>
+    
+    <li><a href="#method-i-receive_message">#receive_message</a>
+    
+    <li><a href="#method-i-receive_message_by_correlation_id">#receive_message_by_correlation_id</a>
+    
+    <li><a href="#method-i-remove_message">#remove_message</a>
+    
+    <li><a href="#method-i-send_message">#send_message</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../App42.html">App42</a>
+  
+    <li><a href="../../App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="../../App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="../../App42/Email.html">App42::Email</a>
+  
+    <li><a href="../../App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="../../App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="../../App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="../../App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="../../App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="../../App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="../../App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="../../App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="../../App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="../../App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="../../App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="../../App42/Game.html">App42::Game</a>
+  
+    <li><a href="../../App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="../../App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="../../App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="../../App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="../../App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="../../App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="../../App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="../../App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="../../App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="../../App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="../../App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="../../App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="../../App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="../../App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="../../App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="../../App42/Log.html">App42::Log</a>
+  
+    <li><a href="../../App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="../../App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="../../App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="../../App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="../../App42/Message.html">App42::Message</a>
+  
+    <li><a href="../../App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="../../App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="../../App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="../../App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="../../App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="../../App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="../../App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="../../App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="../../App42/Review.html">App42::Review</a>
+  
+    <li><a href="../../App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="../../App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="../../App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="../../App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="../../App42/Session.html">App42::Session</a>
+  
+    <li><a href="../../App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="../../App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="../../App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="../../App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="../../App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="../../App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="../../App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="../../App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="../../App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="../../App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="../../App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="../../App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="../../App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="../../App42/Social.html">App42::Social</a>
+  
+    <li><a href="../../App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="../../App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="../../App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="../../App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="../../App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="../../App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="../../App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="../../App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="../../App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="../../App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="../../App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="../../App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="../../App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="../../App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="../../App42/User.html">App42::User</a>
+  
+    <li><a href="../../App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="../../App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="../../App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="../../App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="../../App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="../../App42/Util.html">App42::Util</a>
+  
+    <li><a href="../../App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="../../App42Exception.html">App42Exception</a>
+  
+    <li><a href="../../App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="../../App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="../../App42Response.html">App42Response</a>
+  
+    <li><a href="../../App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="../../App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42::Message::QueueService</h1>
+
+  <div id="description" class="description">
+    
+<p>Manages Asynchronous queues. Allows to create, delete, purge messages, view
+pending messages and get all messages @see <a href="Queue.html">Queue</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_key, secret_key, base_url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Message Service-&gt;initialize&quot;</span>
+  <span class="ruby-ivar">@api_key</span> = <span class="ruby-identifier">api_key</span>
+  <span class="ruby-ivar">@secret_key</span> = <span class="ruby-identifier">secret_key</span>
+  <span class="ruby-ivar">@base_url</span> = <span class="ruby-identifier">base_url</span>
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-string">&quot;queue&quot;</span>
+  <span class="ruby-ivar">@messageResource</span> = <span class="ruby-string">&quot;message&quot;</span>
+  <span class="ruby-ivar">@version</span> = <span class="ruby-string">&quot;1.0&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-create_pull_queue" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_pull_queue</span><span
+            class="method-args">(queueName, queueDescription)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a type Pull <a href="Queue.html">Queue</a> @param queueName The
+name of the queue which has to be created @param queueDescription The
+description of the queue @return <a href="Queue.html">Queue</a> object
+containing queue name which has been created @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="create_pull_queue-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_pull_queue</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-identifier">queueDescription</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Create Pull Queue Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueDescription</span>, <span class="ruby-string">&quot;Queue Description&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;queue&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">queueName</span>,
+      <span class="ruby-string">&quot;description&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">queueDescription</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+      <span class="ruby-string">&quot;type&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">'pull'</span>
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/pull&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">message</span> = <span class="ruby-constant">QueueResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">messageObj</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">messageObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_pull_queue-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_pull_queue-method -->
+
+    
+      <div id="method-i-delete_pull_queue" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_pull_queue</span><span
+            class="method-args">(queueName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes the Pull type <a href="Queue.html">Queue</a> @param queueName The
+name of the queue which has to be deleted @return <a
+href="../../App42Response.html">App42Response</a> if deleted successfully
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="delete_pull_queue-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_pull_queue</span>(<span class="ruby-identifier">queueName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Delete Pull Queue Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+      <span class="ruby-string">&quot;type&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">'pull'</span>
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;queueName&quot;</span>, <span class="ruby-identifier">queueName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/pull/#{queueName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_pull_queue-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_pull_queue-method -->
+
+    
+      <div id="method-i-get_messages" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_messages</span><span
+            class="method-args">(queueName, receiveTimeOut)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Messages are retrieved and dequeued from the <a
+href="Queue.html">Queue</a>. @param queueName The name of the queue which
+have to be retrieved @param receiveTimeOut Receive time out @return <a
+href="Queue.html">Queue</a> object containing messages in the <a
+href="Queue.html">Queue</a> @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_messages-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_messages</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-identifier">receiveTimeOut</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get Messages Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">receiveTimeOut</span>, <span class="ruby-string">&quot;ReceiveTimeOut&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;queueName&quot;</span>, <span class="ruby-identifier">queueName</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;receiveTimeOut&quot;</span>, (<span class="ruby-identifier">receiveTimeOut</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/messages/#{queueName}/#{(receiveTimeOut.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">message</span> = <span class="ruby-constant">QueueResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">messageObj</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">messageObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_messages-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_messages-method -->
+
+    
+      <div id="method-i-pending_messages" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pending_messages</span><span
+            class="method-args">(queueName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Messages which are pending to be dequeue. Note: Calling this method does
+not dequeue the messages in the <a href="Queue.html">Queue</a>. The
+messages stay in the <a href="Queue.html">Queue</a> till they are dequeued
+@param queueName The name of the queue from which pending messages have to
+be fetched @return <a href="Queue.html">Queue</a> object containing pending
+messages in the <a href="Queue.html">Queue</a> @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="pending_messages-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pending_messages</span>(<span class="ruby-identifier">queueName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Pending Messages Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;queueName&quot;</span>, <span class="ruby-identifier">queueName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/pending/#{queueName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">message</span> = <span class="ruby-constant">QueueResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">messageObj</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">messageObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pending_messages-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pending_messages-method -->
+
+    
+      <div id="method-i-purge_pull_queue" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">purge_pull_queue</span><span
+            class="method-args">(queueName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Purges message on the <a href="Queue.html">Queue</a>. Note: once the <a
+href="Queue.html">Queue</a> is purged the messages are removed from the <a
+href="Queue.html">Queue</a> and wont be available for dequeueing. @param
+queueName The name of the queue which has to be purged @return <a
+href="Queue.html">Queue</a> object containing queue name which has been
+purged @raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="purge_pull_queue-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">purge_pull_queue</span>(<span class="ruby-identifier">queueName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Purge Pull Queue Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+      <span class="ruby-string">&quot;type&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">'pull'</span>
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;queueName&quot;</span>, <span class="ruby-identifier">queueName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/pull/purge/#{queueName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- purge_pull_queue-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- purge_pull_queue-method -->
+
+    
+      <div id="method-i-receive_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">receive_message</span><span
+            class="method-args">(queueName, receiveTimeOut)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pulls all the message from the queue @param queueName The name of the queue
+from which messages have to be pulled @param receiveTimeOut Receive time
+out @return <a href="Queue.html">Queue</a> object containing  messages
+which have been pulled @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="receive_message-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">receive_message</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-identifier">receiveTimeOut</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Receive Message Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">receiveTimeOut</span>, <span class="ruby-string">&quot;ReceiveTimeOut&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;queueName&quot;</span>, <span class="ruby-identifier">queueName</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;receiveTimeOut&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">receiveTimeOut</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@messageResource}/#{queueName}/#{(receiveTimeOut.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">message</span> = <span class="ruby-constant">QueueResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">messageObj</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">messageObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- receive_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- receive_message-method -->
+
+    
+      <div id="method-i-receive_message_by_correlation_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">receive_message_by_correlation_id</span><span
+            class="method-args">(queueName, receiveTimeOut, correlationId)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pull message based on the correlation id @param queueName The name of the
+queue from which the message has to be pulled @param receiveTimeOut Receive
+time out @param correlationId Correlation Id for which message has to be
+pulled @return <a href="Queue.html">Queue</a> containing  message which has
+pulled based on the correlation id @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="receive_message_by_correlation_id-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">receive_message_by_correlation_id</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-identifier">receiveTimeOut</span>, <span class="ruby-identifier">correlationId</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Receive Message Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">receiveTimeOut</span>, <span class="ruby-string">&quot;ReceiveTimeOut&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">correlationId</span>, <span class="ruby-string">&quot;Correlation Id&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;queueName&quot;</span>, <span class="ruby-identifier">queueName</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;receiveTimeOut&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">receiveTimeOut</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;correlationId&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">correlationId</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@messageResource}/#{queueName}/#{(receiveTimeOut.to_i).to_s}/#{correlationId}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">message</span> = <span class="ruby-constant">QueueResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">messageObj</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">messageObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- receive_message_by_correlation_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- receive_message_by_correlation_id-method -->
+
+    
+      <div id="method-i-remove_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_message</span><span
+            class="method-args">(queueName, messageId)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove message from the queue based on the message id. Note: Once the
+message is removed it cannot be pulled @param queueName The name of the
+queue from which the message has to be removed @param messageId The message
+id of the message which has to be removed. @return <a
+href="../../App42Response.html">App42Response</a> if removed successfully
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="remove_message-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_message</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-identifier">messageId</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Remove Message Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">messageId</span>, <span class="ruby-string">&quot;messageId&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;queueName&quot;</span>, <span class="ruby-identifier">queueName</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;messageId&quot;</span>, <span class="ruby-identifier">messageId</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@messageResource}/#{queueName}/#{messageId}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_message-method -->
+
+    
+      <div id="method-i-send_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_message</span><span
+            class="method-args">(queueName, msg, exp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Send message on the queue with an expiry. The message will expire if it is
+not pulled/dequeued before the expiry @param queueName The name of the
+queue to which the message has to be sent @param msg <a
+href="Message.html">Message</a> that has to be sent @param exp <a
+href="Message.html">Message</a> expiry time @return <a
+href="Queue.html">Queue</a> object containing message which has been sent
+with its message id and correlation id @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="send_message-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/message/QueueService.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_message</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">exp</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get Messages Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">messageObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">queueName</span>, <span class="ruby-string">&quot;Queue Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-string">&quot;Message&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">exp</span>, <span class="ruby-string">&quot;Exipiration&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;payLoad&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;message&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">msg</span>,
+      <span class="ruby-string">&quot;expiration&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exp</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+      <span class="ruby-string">'queueName'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">queueName</span>
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@messageResource}/#{queueName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">message</span> = <span class="ruby-constant">QueueResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">messageObj</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">messageObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_message-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

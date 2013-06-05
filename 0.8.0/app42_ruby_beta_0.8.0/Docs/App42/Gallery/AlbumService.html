@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42::Gallery::AlbumService - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-create_album">#create_album</a>
+    
+    <li><a href="#method-i-get_album_by_name">#get_album_by_name</a>
+    
+    <li><a href="#method-i-get_albums">#get_albums</a>
+    
+    <li><a href="#method-i-get_albums_by_paging">#get_albums_by_paging</a>
+    
+    <li><a href="#method-i-get_albums_count">#get_albums_count</a>
+    
+    <li><a href="#method-i-remove_album">#remove_album</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../App42.html">App42</a>
+  
+    <li><a href="../../App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="../../App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="../../App42/Email.html">App42::Email</a>
+  
+    <li><a href="../../App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="../../App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="../../App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="../../App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="../../App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="../../App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="../../App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="../../App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="../../App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="../../App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="../../App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="../../App42/Game.html">App42::Game</a>
+  
+    <li><a href="../../App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="../../App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="../../App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="../../App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="../../App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="../../App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="../../App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="../../App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="../../App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="../../App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="../../App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="../../App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="../../App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="../../App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="../../App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="../../App42/Log.html">App42::Log</a>
+  
+    <li><a href="../../App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="../../App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="../../App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="../../App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="../../App42/Message.html">App42::Message</a>
+  
+    <li><a href="../../App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="../../App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="../../App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="../../App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="../../App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="../../App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="../../App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="../../App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="../../App42/Review.html">App42::Review</a>
+  
+    <li><a href="../../App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="../../App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="../../App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="../../App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="../../App42/Session.html">App42::Session</a>
+  
+    <li><a href="../../App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="../../App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="../../App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="../../App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="../../App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="../../App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="../../App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="../../App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="../../App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="../../App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="../../App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="../../App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="../../App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="../../App42/Social.html">App42::Social</a>
+  
+    <li><a href="../../App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="../../App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="../../App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="../../App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="../../App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="../../App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="../../App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="../../App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="../../App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="../../App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="../../App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="../../App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="../../App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="../../App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="../../App42/User.html">App42::User</a>
+  
+    <li><a href="../../App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="../../App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="../../App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="../../App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="../../App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="../../App42/Util.html">App42::Util</a>
+  
+    <li><a href="../../App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="../../App42Exception.html">App42Exception</a>
+  
+    <li><a href="../../App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="../../App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="../../App42Response.html">App42Response</a>
+  
+    <li><a href="../../App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="../../App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42::Gallery::AlbumService</h1>
+
+  <div id="description" class="description">
+    
+<p>Create <a href="Photo.html">Photo</a> <a href="../Gallery.html">Gallery</a>
+on the cloud. This service allows to manage i.e. create, retrieve and
+remove albums on the cloud. Its useful for Mobile/Device App and Web App
+developer who want <a href="Photo.html">Photo</a> <a
+href="../Gallery.html">Gallery</a> functionality. It gives them a complete
+<a href="Photo.html">Photo</a> <a href="../Gallery.html">Gallery</a> out of
+the box and reduces the footprint on the device. Developers can focus on
+how the <a href="Photo.html">Photo</a> <a
+href="../Gallery.html">Gallery</a> will be rendered and this Cloud API will
+manage the <a href="../Gallery.html">Gallery</a> on the cloud thereby
+reducing development time. @see <a href="Album.html">Album</a> @see <a
+href="Photo.html">Photo</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_key, secret_key, base_url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Photo Gallery-&gt;initialize&quot;</span>
+  <span class="ruby-ivar">@api_key</span> = <span class="ruby-identifier">api_key</span>
+  <span class="ruby-ivar">@secret_key</span> = <span class="ruby-identifier">secret_key</span>
+  <span class="ruby-ivar">@base_url</span> = <span class="ruby-identifier">base_url</span>
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-string">&quot;gallery&quot;</span>
+  <span class="ruby-ivar">@version</span> = <span class="ruby-string">&quot;1.0&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-create_album" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_album</span><span
+            class="method-args">(userName, albumName, albumDescription)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates <a href="Album.html">Album</a> on the cloud @param userName The
+user to which the album belongs @param albumName Name of the album to be
+created on the cloud @param albumDescription Description of the album to be
+created @return <a href="Album.html">Album</a> object containing the album
+which has been created @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="create_album-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_album</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-identifier">albumName</span>, <span class="ruby-identifier">albumDescription</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Create Album Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">albumObj</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">albumObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">albumName</span>, <span class="ruby-string">&quot;Album Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">albumDescription</span>, <span class="ruby-string">&quot;Description&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;album&quot;</span>=<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">albumName</span>,
+      <span class="ruby-string">&quot;description&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">albumDescription</span>
+      }}}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/album/#{userName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Response is #{response}&quot;</span>
+    <span class="ruby-identifier">album</span> = <span class="ruby-constant">AlbumResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">albumObj</span> = <span class="ruby-identifier">album</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">albumObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_album-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_album-method -->
+
+    
+      <div id="method-i-get_album_by_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_album_by_name</span><span
+            class="method-args">(userName, albumName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetch all <a href="Album.html">Album</a> based on the userName and
+albumName @param userName The user for which the album has to be fetched
+@param albumName Name of the album that has to be fetched @return <a
+href="Album.html">Album</a> object containing  album for the given userName
+and albumName @raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_album_by_name-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_album_by_name</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-identifier">albumName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAlbumByName Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">albumObj</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">albumObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">albumName</span>, <span class="ruby-string">&quot;Album Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;albumName&quot;</span>, <span class="ruby-identifier">albumName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/album/#{userName}/#{albumName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Response is #{response}&quot;</span>
+    <span class="ruby-identifier">album</span> = <span class="ruby-constant">AlbumResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">albumObj</span> = <span class="ruby-identifier">album</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">albumObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_album_by_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_album_by_name-method -->
+
+    
+      <div id="method-i-get_albums" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_albums</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches all the Albums based on the userName @param userName The user for
+which the albums have to be fetched @return  <a href="Album.html">Album</a>
+object containing all the album for the given userName @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_albums-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_albums</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Get Albums Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">albumList</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">albumList</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/album/#{userName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">album</span> = <span class="ruby-constant">AlbumResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">albumObj</span> = <span class="ruby-identifier">album</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">albumObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_albums-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_albums-method -->
+
+    
+      <div id="method-i-get_albums_by_paging" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_albums_by_paging</span><span
+            class="method-args">(userName, max, offset)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches all the Albums based on the userName by Paging. @param userName The
+user for which the albums have to be fetched @param max Maximum number of
+records to be fetched @param offset From where the records are to be
+fetched @return <a href="Album.html">Album</a> object containing all the
+album for the given userName @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_albums_by_paging-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_albums_by_paging</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-identifier">max</span>, <span class="ruby-identifier">offset</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAlbumsByPaging Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">albumList</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">albumList</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateMax</span>(<span class="ruby-identifier">max</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">max</span>, <span class="ruby-string">&quot;Max&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">offset</span>, <span class="ruby-string">&quot;Offset&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;max&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">max</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;offset&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">offset</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/album/#{userName}/#{(max.to_i).to_s}/#{(offset.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">album</span> = <span class="ruby-constant">AlbumResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">albumObj</span> = <span class="ruby-identifier">album</span>.<span class="ruby-identifier">buildArrayResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">albumObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_albums_by_paging-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_albums_by_paging-method -->
+
+    
+      <div id="method-i-get_albums_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_albums_count</span><span
+            class="method-args">(userName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches the count of all the Albums based on the userName @param userName
+The user for which the count of albums have to be fetched @return <a
+href="../../App42Response.html">App42Response</a> object containing the
+count of all the album for the given userName @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="get_albums_count-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_albums_count</span>(<span class="ruby-identifier">userName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;getAlbumsCount Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/album/#{userName}/count&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">AlbumResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">getTotalRecords</span>(<span class="ruby-identifier">response</span>);
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_albums_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_albums_count-method -->
+
+    
+      <div id="method-i-remove_album" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_album</span><span
+            class="method-args">(userName, albumName)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes the album based on the userName and albumName. Note: All photos
+added to this <a href="Album.html">Album</a> will also be removed @param
+userName The user for which the album has to be removed @param albumName
+Name of the album that has to be removed @return  <a
+href="../../App42Response.html">App42Response</a>  if removed successfully
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="remove_album-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/gallery/AlbumService.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_album</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-identifier">albumName</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Delete Album Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userName</span>, <span class="ruby-string">&quot;User Name&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">albumName</span>, <span class="ruby-string">&quot;Album Name&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userName&quot;</span>, <span class="ruby-identifier">userName</span>)
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;albumName&quot;</span>, <span class="ruby-identifier">albumName</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/#{userName}/#{albumName}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_album-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_album-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

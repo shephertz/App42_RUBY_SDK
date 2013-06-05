@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42::Recommend::RecommenderService - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-add_or_update_preference">#add_or_update_preference</a>
+    
+    <li><a href="#method-i-delete_all_preferences">#delete_all_preferences</a>
+    
+    <li><a href="#method-i-item_based">#item_based</a>
+    
+    <li><a href="#method-i-item_based_by_Similarity_for_all">#item_based_by_Similarity_for_all</a>
+    
+    <li><a href="#method-i-item_based_by_similarity">#item_based_by_similarity</a>
+    
+    <li><a href="#method-i-item_based_for_all">#item_based_for_all</a>
+    
+    <li><a href="#method-i-load_preference_file">#load_preference_file</a>
+    
+    <li><a href="#method-i-load_preference_file_stream">#load_preference_file_stream</a>
+    
+    <li><a href="#method-i-slope_one">#slope_one</a>
+    
+    <li><a href="#method-i-slope_one_for_all">#slope_one_for_all</a>
+    
+    <li><a href="#method-i-user_based_neighborhood">#user_based_neighborhood</a>
+    
+    <li><a href="#method-i-user_based_neighborhood_by_similarity">#user_based_neighborhood_by_similarity</a>
+    
+    <li><a href="#method-i-user_based_neighborhood_by_similarity_for_all">#user_based_neighborhood_by_similarity_for_all</a>
+    
+    <li><a href="#method-i-user_based_neighborhood_for_all">#user_based_neighborhood_for_all</a>
+    
+    <li><a href="#method-i-user_based_threshold">#user_based_threshold</a>
+    
+    <li><a href="#method-i-user_based_threshold_by_similarity_for_all">#user_based_threshold_by_similarity_for_all</a>
+    
+    <li><a href="#method-i-user_based_threshold_for_all">#user_based_threshold_for_all</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../App42.html">App42</a>
+  
+    <li><a href="../../App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="../../App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="../../App42/Email.html">App42::Email</a>
+  
+    <li><a href="../../App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="../../App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="../../App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="../../App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="../../App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="../../App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="../../App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="../../App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="../../App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="../../App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="../../App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="../../App42/Game.html">App42::Game</a>
+  
+    <li><a href="../../App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="../../App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="../../App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="../../App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="../../App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="../../App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="../../App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="../../App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="../../App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="../../App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="../../App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="../../App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="../../App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="../../App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="../../App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="../../App42/Log.html">App42::Log</a>
+  
+    <li><a href="../../App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="../../App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="../../App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="../../App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="../../App42/Message.html">App42::Message</a>
+  
+    <li><a href="../../App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="../../App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="../../App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="../../App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="../../App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="../../App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="../../App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="../../App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="../../App42/Review.html">App42::Review</a>
+  
+    <li><a href="../../App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="../../App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="../../App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="../../App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="../../App42/Session.html">App42::Session</a>
+  
+    <li><a href="../../App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="../../App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="../../App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="../../App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="../../App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="../../App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="../../App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="../../App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="../../App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="../../App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="../../App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="../../App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="../../App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="../../App42/Social.html">App42::Social</a>
+  
+    <li><a href="../../App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="../../App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="../../App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="../../App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="../../App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="../../App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="../../App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="../../App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="../../App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="../../App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="../../App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="../../App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="../../App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="../../App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="../../App42/User.html">App42::User</a>
+  
+    <li><a href="../../App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="../../App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="../../App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="../../App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="../../App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="../../App42/Util.html">App42::Util</a>
+  
+    <li><a href="../../App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="../../App42Exception.html">App42Exception</a>
+  
+    <li><a href="../../App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="../../App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="../../App42Response.html">App42Response</a>
+  
+    <li><a href="../../App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="../../App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42::Recommend::RecommenderService</h1>
+
+  <div id="description" class="description">
+    
+<p>Recommendation engine which provides reommendation based on customer id,
+item id and the preference of the customer for a particular Item.
+Recommendations can be fetched based on <a href="../User.html">User</a>
+Similarity which finds similarity based on Users and Item Similarity which
+finds similarity based on Items. The Recommendation Engine currently
+supports two types of Similarity Algorithms i.e.
+EuclideanDistanceSimilarity and PearsonCorrelationSimilarity. By default
+when similarity is not specified PearsonCorrelationSimilarity is used e.g.
+in the method itemBased(String preferenceFileName, long userId, int
+howMany), it uses PearsonCorrelationSimilarity. In the method
+itemBasedBySimilarity(String similarity, String preferenceFileName, long
+userId, int howMany) one can specify which similarity algorithm has to be
+used e.g. <a href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE or
+<a href="Recommender.html">Recommender</a>.PEARSON_CORRELATION. Preference
+file can be loaded using the method <a
+href="RecommenderService.html#method-i-load_preference_file">#load_preference_file</a>(String
+fileName, String preferenceFilePath, String description) in csv format.
+This prefernce file has to be uploaded once which can be a batch process
+The csv format for the file is given below. customerId, itemId, preference
+e.g. 1,101,5.0 1,102,3.0 1,103,2.5</p>
+
+<p>2,101,2.0 2,102,2.5 2,103,5.0 2,104,2.0</p>
+
+<p>3,101,2.5 3,104,4.0 3,105,4.5 3,107,5.0</p>
+
+<p>4,101,5.0 4,103,3.0 4,104,4.5 4,106,4.0</p>
+
+<p>5,101,4.0 5,102,3.0 5,103,2.0 5,104,4.0 5,105,3.5 5,106,4.0 The customer Id
+and item id can be any alphanumaric character(s) and preference values can
+be in any range.</p>
+
+<p>If app developers have used the <a href="../Review.html">Review</a>
+Service. The Recommendation Engine can be used in conjunction with <a
+href="../Review.html">Review</a>. In this case a CSV preference file need
+not be uploaded. The customerId, itemId and preference will be taken from
+<a href="../Review.html">Review</a> where customerId is mapped with
+userName, itemId is mapped with itemId and preference with rating. The
+methods for recommendations based on Reviews are part of the <a
+href="../Review.html">Review</a> service @see ReviewService</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_key, secret_key, base_url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Recommender Service-&gt;initialize&quot;</span>
+  <span class="ruby-ivar">@api_key</span> = <span class="ruby-identifier">api_key</span>
+  <span class="ruby-ivar">@secret_key</span> = <span class="ruby-identifier">secret_key</span>
+  <span class="ruby-ivar">@base_url</span> = <span class="ruby-identifier">base_url</span>
+  <span class="ruby-ivar">@resource</span> = <span class="ruby-string">&quot;recommend&quot;</span>
+  <span class="ruby-ivar">@version</span> = <span class="ruby-string">&quot;1.0&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_or_update_preference" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_or_update_preference</span><span
+            class="method-args">(preferenceDataList)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_or_update_preference-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 860</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_or_update_preference</span>(<span class="ruby-identifier">preferenceDataList</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;addOrUpdatePreference Called &quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">preferenceDataList</span>, <span class="ruby-string">&quot;preferenceDataList&quot;</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">post_params</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">preferenceDataArray</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">preferenceData</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">preferenceDataList</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userId&quot;</span>, <span class="ruby-identifier">preferenceData</span>.<span class="ruby-identifier">userId</span>())
+      <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;itemId&quot;</span>, <span class="ruby-identifier">preferenceData</span>.<span class="ruby-identifier">itemId</span>())
+      <span class="ruby-identifier">post_params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;preference&quot;</span>, <span class="ruby-identifier">preferenceData</span>.<span class="ruby-identifier">preference</span>())
+      <span class="ruby-identifier">preferenceDataArray</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">post_params</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">preference</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">body</span> = {<span class="ruby-string">'app42'</span> =<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&quot;preferences&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">preference</span>,
+      <span class="ruby-string">&quot;preference&quot;</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">preferenceDataArray</span>
+      }}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Body #{body}&quot;</span>
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/addOrUpdatePreference&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_or_update_preference-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_or_update_preference-method -->
+
+    
+      <div id="method-i-delete_all_preferences" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_all_preferences</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete existing preference file. @param peferenceFileName Name of the
+Prefeence File based on which recommendations have to be found @returns
+File name which has been removed @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="delete_all_preferences-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 831</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_all_preferences</span>()
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;deletePreferenceFile Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/deleteAllPreferences/&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_all_preferences-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_all_preferences-method -->
+
+    
+      <div id="method-i-item_based" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">item_based</span><span
+            class="method-args">(userId, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Item based recommendations. Recommendations and found based item similarity
+of the given user. The size of the neighborhood can be found. @param
+peferenceFileName Name of the Prefeence File based on which recommendations
+have to be found @param userId The user Id for whom recommendations have to
+be found @param howMany Specifies that how many recommendations have to be
+found @returns Recommendations @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="item_based-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 390</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">item_based</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;itemBased Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-string">&quot;User Id&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userId&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">userId</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/itemBased/#{userId}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- item_based-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- item_based-method -->
+
+    
+      <div id="method-i-item_based_by_Similarity_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">item_based_by_Similarity_for_all</span><span
+            class="method-args">(recommenderSimilarity, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Item based recommendations for all Users. Recommendations and found based
+one item similarity. Similarity algorithm can be specified. of the given
+user. The size of the neighborhood can be found. @param
+recommenderSimilarity Similarity algorithm e.g. <a
+href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE and <a
+href="Recommender.html">Recommender</a>.PEARSON_CORRELATION @param
+peferenceFileName Name of the Prefeence File based on which recommendations
+have to be found @param howMany Specifies that how many recommendations
+have to be found @returns Recommendations for all Users @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="item_based_by_Similarity_for_all-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 657</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">item_based_by_Similarity_for_all</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;itemBasedBySimilarityForAll Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-string">&quot;recommenderSimilarity&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">RecommenderSimilarity</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">recommenderSimilarity</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;The RecommenderSimilarity&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span><span class="ruby-operator">+</span> <span class="ruby-string">&quot;does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;similarity&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/itemBased/all/#{recommenderSimilarity}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- item_based_by_Similarity_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- item_based_by_Similarity_for_all-method -->
+
+    
+      <div id="method-i-item_based_by_similarity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">item_based_by_similarity</span><span
+            class="method-args">(recommenderSimilarity, userId, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Item based recommendations. Recommendations and found based one item
+similarity. Similarity algorithm can be specified. of the given user. The
+size of the neighborhood can be found. @param recommenderSimilarity
+Similarity algorithm e.g. <a
+href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE and <a
+href="Recommender.html">Recommender</a>.PEARSON_CORRELATION @param
+peferenceFileName Name of the Prefeence File based on which recommendations
+have to be found @param userId The user Id for whom recommendations have to
+be found @param howMany Specifies that how many recommendations have to be
+found @returns Recommendations @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="item_based_by_similarity-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 743</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">item_based_by_similarity</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-identifier">userId</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;itemBasedBySimilarity Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-string">&quot;recommenderSimilarity&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-string">&quot;User Id&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">RecommenderSimilarity</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">recommenderSimilarity</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;The RecommenderSimilarity&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span><span class="ruby-operator">+</span> <span class="ruby-string">&quot;does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;similarity&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userId&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">userId</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/itemBased/#{recommenderSimilarity}/#{userId}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- item_based_by_similarity-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- item_based_by_similarity-method -->
+
+    
+      <div id="method-i-item_based_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">item_based_for_all</span><span
+            class="method-args">(howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Item based recommendations for all Users. Recommendations and found based
+item similarity of the given user. The size of the neighborhood can be
+found. @param peferenceFileName Name of the Prefeence File based on which
+recommendations have to be found @param howMany Specifies that how many
+recommendations have to be found @returns Recommendations for all Users
+@raise <a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="item_based_for_all-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 616</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">item_based_for_all</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;itemBasedForAll Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/itemBased/all/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- item_based_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- item_based_for_all-method -->
+
+    
+      <div id="method-i-load_preference_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_preference_file</span><span
+            class="method-args">(preferenceFilePath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Uploads peference file on the cloud. The preference file should be in CSV
+format. This prefernce file has to be uploaded once which can be a batch
+process. New versions of preference file either can be uploaded in a
+different name or the older one has to be removed and the uploaded in the
+same name. The csv format for the file is given below. customerId, itemId,
+preference e.g. 1,101,5.0 1,102,3.0 1,103,2.5</p>
+
+<p>2,101,2.0 2,102,2.5 2,103,5.0 2,104,2.0</p>
+
+<p>3,101,2.5 3,104,4.0 3,105,4.5 3,107,5.0</p>
+
+<p>4,101,5.0 4,103,3.0 4,104,4.5 4,106,4.0</p>
+
+<p>5,101,4.0 5,102,3.0 5,103,2.0 5,104,4.0 5,105,3.5 5,106,4.0 The customer Id
+and item id can be any alphanumaric character(s) and preference values can
+be in any range. If the recommendations have to be done based on Reviews
+then this file need not be uploaded.</p>
+
+<p>@param fileName Name of the Prefeence File based on which recommendations
+have to be found @param preferenceFilePath Path of the preference file to
+be loaded @param description Description of the preference file to be
+loaded @return Returns the uploaded preference file details. @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="load_preference_file-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_preference_file</span>(<span class="ruby-identifier">preferenceFilePath</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;load_preference_file Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">preferenceFilePath</span>, <span class="ruby-string">&quot;PreferenceFilePath&quot;</span>);
+  <span class="ruby-keyword">if</span> (<span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">preferenceFilePath</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;The file with the name #{preferenceFilePath} not found&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">file</span> = <span class="ruby-identifier">preferenceFilePath</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">query_params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">post_params</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">post_params</span>)
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">recommendMultipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">preferenceFilePath</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_preference_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_preference_file-method -->
+
+    
+      <div id="method-i-load_preference_file_stream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_preference_file_stream</span><span
+            class="method-args">(inputStream)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="load_preference_file_stream-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_preference_file_stream</span>(<span class="ruby-identifier">inputStream</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;load_preference_file stream Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">responseObj</span> = <span class="ruby-constant">App42Response</span>.<span class="ruby-identifier">new</span>();
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">inputStream</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;The file with the name #{inputStream} not found&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">params</span> = <span class="ruby-identifier">query_params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">recommendMultipartStream</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">inputStream</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">strResponse</span>=(<span class="ruby-identifier">response</span>)
+    <span class="ruby-identifier">responseObj</span>.<span class="ruby-identifier">isResponseSuccess</span>=(<span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">responseObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_preference_file_stream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_preference_file_stream-method -->
+
+    
+      <div id="method-i-slope_one" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slope_one</span><span
+            class="method-args">(userId, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recommendations based on SlopeOne Algorithm @param peferenceFileName Name
+of the Prefeence File based on which recommendations have to be found
+@param userId The user Id for whom recommendations have to be found @param
+howMany Specifies that how many recommendations have to be found @returns
+Recommendations @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="slope_one-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 432</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slope_one</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;slopeOne Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-string">&quot;User Id&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userId&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">userId</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/slopeOne/#{userId}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slope_one-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slope_one-method -->
+
+    
+      <div id="method-i-slope_one_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slope_one_for_all</span><span
+            class="method-args">(howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recommendations based on SlopeOne Algorithm for all Users @param
+peferenceFileName Name of the Prefeence File based on which recommendations
+have to be found @param howMany Specifies that how many recommendations
+have to be found @returns Recommendations for all Users @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="slope_one_for_all-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 701</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slope_one_for_all</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;itemBasedBySimilarityForAll Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/slopeOne/all/#{(howMany.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slope_one_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slope_one_for_all-method -->
+
+    
+      <div id="method-i-user_based_neighborhood" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_based_neighborhood</span><span
+            class="method-args">(userId, size, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../User.html">User</a> based recommendations based on
+Neighborhood. Recommendations are found based on similar users in the
+Neighborhood of the given user. The size of the neighborhood can be found.
+@param peferenceFileName Name of the Prefeence File based on which
+recommendations have to be found @param userId The user Id for whom
+recommendations have to be found @param size Size of the Neighborhood
+@param howMany Specifies that how many recommendations have to be found
+@returns Recommendations @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="user_based_neighborhood-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_based_neighborhood</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;userBasedNeighborhood Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-string">&quot;User Id&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">size</span>, <span class="ruby-string">&quot;Size&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;HowMany&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userId&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">userId</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;size&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/userBasedNeighborhood/#{userId}/#{size}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_based_neighborhood-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_based_neighborhood-method -->
+
+    
+      <div id="method-i-user_based_neighborhood_by_similarity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_based_neighborhood_by_similarity</span><span
+            class="method-args">(recommenderSimilarity, userId, size, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../User.html">User</a> based recommendations based on Neighborhood
+and Similarity. Recommendations and found based on the similar users in the
+Neighborhood with the specified Similarity Algorithm. Algorithim can be
+specified using the constants <a
+href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE and <a
+href="Recommender.html">Recommender</a>.PEARSON_CORRELATION @param
+recommenderSimilarity Similarity algorithm e.g. <a
+href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE and <a
+href="Recommender.html">Recommender</a>.PEARSON_CORRELATION @param
+peferenceFileName Name of the Prefeence File based on which recommendations
+have to be found @param userId The user Id for whom recommendations have to
+be found @param size Size of the Neighborhood @param howMany Specifies that
+how many recommendations have to be found @returns Recommendations @raise
+<a href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="user_based_neighborhood_by_similarity-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_based_neighborhood_by_similarity</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-identifier">userId</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;userBasedNeighborhoodBySimilarity Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-string">&quot;recommenderSimilarity&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-string">&quot;User Id&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">size</span>, <span class="ruby-string">&quot;Size&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;HowMany&quot;</span>);
+  <span class="ruby-identifier">rs</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Recommend</span><span class="ruby-operator">::</span><span class="ruby-constant">RecommenderSimilarity</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">RecommenderSimilarity</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">recommenderSimilarity</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;The RecommenderSimilarity&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span><span class="ruby-operator">+</span> <span class="ruby-string">&quot;does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userId&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">userId</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;size&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;similarity&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/userBasedNeighborhood/#{recommenderSimilarity}/#{userId}/#{size}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_based_neighborhood_by_similarity-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_based_neighborhood_by_similarity-method -->
+
+    
+      <div id="method-i-user_based_neighborhood_by_similarity_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_based_neighborhood_by_similarity_for_all</span><span
+            class="method-args">(recommenderSimilarity, size, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../User.html">User</a> based recommendations based on Neighborhood
+and Similarity for all Users. Recommendations and found based similar users
+in the Neighborhood with the specified Similarity Algorithm. Algorithim can
+be specified using the constants <a
+href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE and <a
+href="Recommender.html">Recommender</a>.PEARSON_CORRELATION @param
+recommenderSimilarity Similarity algorithm e.g. <a
+href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE and <a
+href="Recommender.html">Recommender</a>.PEARSON_CORRELATION @param
+peferenceFileName Name of the Prefeence File based on which recommendations
+have to be found @param size Size of the Neighborhood @param howMany
+Specifies that how many recommendations have to be found @returns
+Recommendations for all Users @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="user_based_neighborhood_by_similarity_for_all-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 520</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_based_neighborhood_by_similarity_for_all</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;userBasedNeighborhoodBySimilarityForAll Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-string">&quot;recommenderSimilarity&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">size</span>, <span class="ruby-string">&quot;Size&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">RecommenderSimilarity</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">recommenderSimilarity</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;The RecommenderSimilarity&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span><span class="ruby-operator">+</span> <span class="ruby-string">&quot;does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;size&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/userBasedNeighborhood/all/#{size}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_based_neighborhood_by_similarity_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_based_neighborhood_by_similarity_for_all-method -->
+
+    
+      <div id="method-i-user_based_neighborhood_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_based_neighborhood_for_all</span><span
+            class="method-args">(size, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../User.html">User</a> based recommendations based on Neighborhood
+for All Users. Recommendations and found based similar users in the
+Neighborhood of the given user. The size of the neighborhood can be found.
+@param peferenceFileName Name of the Prefeence File based on which
+recommendations have to be found @param size Size of the Neighborhood
+@param howMany Specifies that how many recommendations have to be found
+@returns Recommendations for All users @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="user_based_neighborhood_for_all-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 791</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_based_neighborhood_for_all</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;userBasedNeighborhoodForAll Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">size</span>, <span class="ruby-string">&quot;Size&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;size&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/userBasedNeighborhood/all/#{size}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_based_neighborhood_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_based_neighborhood_for_all-method -->
+
+    
+      <div id="method-i-user_based_threshold" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_based_threshold</span><span
+            class="method-args">(userId, threshold, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../User.html">User</a> based neighborhood recommendations based on
+Threshold. Recommendations are found based on Threshold where thereshold
+represents similarity threshold where user are atleast that similar.
+Threshold values can vary from -1 to 1 @param peferenceFileName Name of the
+Prefeence File based on which recommendations have to be found @param
+userId The user Id for whom recommendations have to be found @param
+threshold Threshold size. Values can vary from -1 to 1 @param howMany
+Specifies that how many recommendations have to be found @returns
+Recommendations @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="user_based_threshold-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_based_threshold</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-identifier">threshold</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;userBasedThreshold Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">userId</span>, <span class="ruby-string">&quot;User Id&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">threshold</span>, <span class="ruby-string">&quot;Threshold&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;HowMany&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;userId&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">userId</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;threshold&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">threshold</span>.<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/userBasedThreshold/#{userId}/#{(threshold.to_f).to_s}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_based_threshold-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_based_threshold-method -->
+
+    
+      <div id="method-i-user_based_threshold_by_similarity_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_based_threshold_by_similarity_for_all</span><span
+            class="method-args">(recommenderSimilarity, threshold, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../User.html">User</a> based neighborood recommendations based on
+Threshold for All. Recommendations are found based on Threshold where
+thereshold represents similarity threshold where user are atleast that
+similar. Threshold values can vary from -1 to 1 @param
+recommenderSimilarity Similarity algorithm e.g. <a
+href="Recommender.html">Recommender</a>.EUCLIDEAN_DISTANCE and <a
+href="Recommender.html">Recommender</a>.PEARSON_CORRELATION @param
+peferenceFileName Name of the Prefeence File based on which recommendations
+have to be found @param threshold Threshold size. Values can vary from -1
+to 1 @param howMany Specifies that how many recommendations have to be
+found @returns Recommendations for All @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="user_based_threshold_by_similarity_for_all-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 569</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_based_threshold_by_similarity_for_all</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-identifier">threshold</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;userBasedThresholdBySimilarityForAll Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">recommenderSimilarity</span>, <span class="ruby-string">&quot;recommenderSimilarity&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">threshold</span>, <span class="ruby-string">&quot;Threshold&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">RecommenderSimilarity</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">isAvailable</span>(<span class="ruby-identifier">recommenderSimilarity</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;The RecommenderSimilarity&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span><span class="ruby-operator">+</span> <span class="ruby-string">&quot;does not Exist &quot;</span>);
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;similarity&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">recommenderSimilarity</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;threshold&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">threshold</span>.<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/userBasedThreshold/all/#{recommenderSimilarity}/#{(threshold.to_f)}/#{howMany}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_based_threshold_by_similarity_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_based_threshold_by_similarity_for_all-method -->
+
+    
+      <div id="method-i-user_based_threshold_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_based_threshold_for_all</span><span
+            class="method-args">(threshold, howMany)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="../User.html">User</a> based neighborood recommendations based on
+Threshold for all Users. Recommendations are found based on Threshold where
+thereshold represents similarity threshold where user are atleast that
+similar. Threshold values can vary from -1 to 1 @param peferenceFileName
+Name of the Prefeence File based on which recommendations have to be found
+@param threshold Threshold size. Values can vary from -1 to 1 @param
+howMany Specifies that how many recommendations have to be found @returns
+Recommendations for all Users @raise <a
+href="../../App42Exception.html">App42Exception</a></p>
+          
+
+          
+          <div class="method-source-code" id="user_based_threshold_for_all-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/recommend/RecommenderService.rb, line 476</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_based_threshold_for_all</span>(<span class="ruby-identifier">threshold</span>, <span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;userBasedThresholdForAll Called &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url #{@base_url}&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-constant">Recommender</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-identifier">util</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">validateHowMany</span>(<span class="ruby-identifier">howMany</span>)
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">threshold</span>, <span class="ruby-string">&quot;Threshold&quot;</span>);
+  <span class="ruby-identifier">util</span>.<span class="ruby-identifier">throwExceptionIfNullOrBlank</span>(<span class="ruby-identifier">howMany</span>, <span class="ruby-string">&quot;How Many&quot;</span>);
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">connection</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span><span class="ruby-operator">::</span><span class="ruby-constant">RESTConnection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base_url</span>)
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">params</span> = {
+      <span class="ruby-string">'apiKey'</span>=<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@api_key</span>,
+      <span class="ruby-string">'version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@version</span>,
+      <span class="ruby-string">'timeStamp'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">util</span>.<span class="ruby-identifier">get_timestamp_utc</span>,
+    }
+    <span class="ruby-identifier">query_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">clone</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;threshold&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">threshold</span>.<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;howMany&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">howMany</span>.<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">to_s</span>);
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">query_params</span>
+    <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">util</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-ivar">@secret_key</span>, <span class="ruby-identifier">params</span>)
+    <span class="ruby-identifier">resource_url</span> = <span class="ruby-node">&quot;#{@version}/#{@resource}/userBasedThreshold/all/#{(threshold.to_f).to_s}/#{(howMany.to_i).to_s}&quot;</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">resource_url</span>, <span class="ruby-identifier">query_params</span>)
+    <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">RecommenderResponseBuilder</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">recommenderObj</span> = <span class="ruby-identifier">recommend</span>.<span class="ruby-identifier">buildResponse</span>(<span class="ruby-identifier">response</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">App42Exception</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">recommenderObj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- user_based_threshold_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_based_threshold_for_all-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42::Connection::RESTConnection - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-get">#get</a>
+    
+    <li><a href="#method-i-imageMultipart">#imageMultipart</a>
+    
+    <li><a href="#method-i-imageMultipartStream">#imageMultipartStream</a>
+    
+    <li><a href="#method-i-multipart">#multipart</a>
+    
+    <li><a href="#method-i-multipartStream">#multipartStream</a>
+    
+    <li><a href="#method-i-photoMultipart">#photoMultipart</a>
+    
+    <li><a href="#method-i-photoMultipartStream">#photoMultipartStream</a>
+    
+    <li><a href="#method-i-post">#post</a>
+    
+    <li><a href="#method-i-put">#put</a>
+    
+    <li><a href="#method-i-recommendMultipart">#recommendMultipart</a>
+    
+    <li><a href="#method-i-recommendMultipartStream">#recommendMultipartStream</a>
+    
+    <li><a href="#method-i-shopMultipart">#shopMultipart</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../App42.html">App42</a>
+  
+    <li><a href="../../App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="../../App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="../../App42/Email.html">App42::Email</a>
+  
+    <li><a href="../../App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="../../App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="../../App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="../../App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="../../App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="../../App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="../../App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="../../App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="../../App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="../../App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="../../App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="../../App42/Game.html">App42::Game</a>
+  
+    <li><a href="../../App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="../../App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="../../App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="../../App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="../../App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="../../App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="../../App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="../../App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="../../App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="../../App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="../../App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="../../App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="../../App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="../../App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="../../App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="../../App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="../../App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="../../App42/Log.html">App42::Log</a>
+  
+    <li><a href="../../App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="../../App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="../../App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="../../App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="../../App42/Message.html">App42::Message</a>
+  
+    <li><a href="../../App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="../../App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="../../App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="../../App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="../../App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="../../App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="../../App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="../../App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="../../App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="../../App42/Review.html">App42::Review</a>
+  
+    <li><a href="../../App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="../../App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="../../App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="../../App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="../../App42/Session.html">App42::Session</a>
+  
+    <li><a href="../../App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="../../App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="../../App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="../../App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="../../App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="../../App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="../../App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="../../App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="../../App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="../../App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="../../App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="../../App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="../../App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="../../App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="../../App42/Social.html">App42::Social</a>
+  
+    <li><a href="../../App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="../../App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="../../App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="../../App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="../../App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="../../App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="../../App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="../../App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="../../App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="../../App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="../../App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="../../App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="../../App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="../../App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="../../App42/User.html">App42::User</a>
+  
+    <li><a href="../../App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="../../App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="../../App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="../../App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="../../App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="../../App42/Util.html">App42::Util</a>
+  
+    <li><a href="../../App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="../../App42Exception.html">App42Exception</a>
+  
+    <li><a href="../../App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="../../App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="../../App42Response.html">App42Response</a>
+  
+    <li><a href="../../App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="../../App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42::Connection::RESTConnection</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-base_url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">base_url</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(base_url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;RESTConnection-&gt;initialize&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url 0 #{@base_url}&quot;</span>
+  <span class="ruby-ivar">@base_url</span> = <span class="ruby-identifier">base_url</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(signature, url, params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">resource</span>, <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>, <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>, <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+      <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+      <span class="ruby-keyword">end</span>        
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(signature, url, params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">get</span> <span class="ruby-identifier">resource</span>,<span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>, <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>, <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;e----#{e}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+      <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+      <span class="ruby-keyword">end</span>            
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-i-imageMultipart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">imageMultipart</span><span
+            class="method-args">(signature, url, params, post_params, imagePath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="imageMultipart-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 345</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">imageMultipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">imagePath</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+    {
+      <span class="ruby-value">:imageFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">imagePath</span>, <span class="ruby-string">&quot;rb&quot;</span>),
+      <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+      <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'width'</span>],
+      <span class="ruby-value">:height</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'height'</span>],
+      <span class="ruby-value">:percentage</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'percentage'</span>],
+      <span class="ruby-value">:x</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'x'</span>],
+      <span class="ruby-value">:y</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'y'</span>],
+    },
+    <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+    )
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;e-----#{e}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> =<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- imageMultipart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- imageMultipart-method -->
+
+    
+      <div id="method-i-imageMultipartStream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">imageMultipartStream</span><span
+            class="method-args">(signature, url, params, post_params, imagePath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="imageMultipartStream-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 391</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">imageMultipartStream</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">imagePath</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+    {
+      <span class="ruby-value">:imageFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">imagePath</span>,
+      <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+      <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'width'</span>],
+      <span class="ruby-value">:height</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'height'</span>],
+      <span class="ruby-value">:percentage</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'percentage'</span>],
+      <span class="ruby-value">:x</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'x'</span>],
+      <span class="ruby-value">:y</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'y'</span>],
+    },
+    <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+    )
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;e-----#{e}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> =<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- imageMultipartStream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- imageMultipartStream-method -->
+
+    
+      <div id="method-i-multipart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">multipart</span><span
+            class="method-args">(signature, url, params, post_params, filePath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="multipart-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">multipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">filePath</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+    {
+      <span class="ruby-value">:uploadFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filePath</span>, <span class="ruby-string">&quot;rb&quot;</span>),
+      <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+      <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'type'</span>],
+      <span class="ruby-value">:userName</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'userName'</span>],
+      <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'description'</span>]
+    },
+    <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+    )
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- multipart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- multipart-method -->
+
+    
+      <div id="method-i-multipartStream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">multipartStream</span><span
+            class="method-args">(signature, url, params, post_params, inputStream)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="multipartStream-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">multipartStream</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">inputStream</span>)
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+        <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+        <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+        <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+          {
+            <span class="ruby-value">:uploadFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">inputStream</span>,
+            <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+            <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'type'</span>],
+            <span class="ruby-value">:userName</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'userName'</span>],
+            <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'description'</span>]
+          },
+          <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+          <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+          <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+          )
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>    
+        <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+            <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+          <span class="ruby-keyword">end</span>      
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+          <span class="ruby-keyword">end</span>    
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- multipartStream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- multipartStream-method -->
+
+    
+      <div id="method-i-photoMultipart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">photoMultipart</span><span
+            class="method-args">(signature, url, params, post_params, filePath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="photoMultipart-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">photoMultipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">filePath</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+    {
+      <span class="ruby-value">:imageFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filePath</span>, <span class="ruby-string">&quot;rb&quot;</span>),           
+      <span class="ruby-value">:albumName</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'albumName'</span>],
+      <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+      <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'description'</span>]
+    },
+    <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+    )
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- photoMultipart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- photoMultipart-method -->
+
+    
+      <div id="method-i-photoMultipartStream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">photoMultipartStream</span><span
+            class="method-args">(signature, url, params, post_params, filePath)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="photoMultipartStream-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">photoMultipartStream</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">filePath</span>)
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+        <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+        <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+        <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+          {
+            <span class="ruby-value">:imageFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">filePath</span>,                 
+            <span class="ruby-value">:albumName</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'albumName'</span>],
+            <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+            <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'description'</span>]
+          },
+          <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+          <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+          <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+          )
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+        <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+            <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+          <span class="ruby-keyword">end</span>   
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+          <span class="ruby-keyword">end</span>   
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- photoMultipartStream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- photoMultipartStream-method -->
+
+    
+      <div id="method-i-post" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">post</span><span
+            class="method-args">(signature, url, params, body)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="post-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">post</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">body</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span> <span class="ruby-identifier">resource</span>, <span class="ruby-identifier">body</span>,<span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,<span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>, <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+      <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+      <span class="ruby-keyword">end</span>        
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url 3.2 #{@base_url}&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- post-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- post-method -->
+
+    
+      <div id="method-i-put" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">put</span><span
+            class="method-args">(signature, url, params, body)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="put-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">put</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">body</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Base url 4.1 #{@base_url}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">put</span> <span class="ruby-identifier">resource</span>, <span class="ruby-identifier">body</span>,<span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>, <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>, <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>            
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- put-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- put-method -->
+
+    
+      <div id="method-i-recommendMultipart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recommendMultipart</span><span
+            class="method-args">(signature, url, params, post_params, preferenceFile)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recommendMultipart-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 487</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recommendMultipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">preferenceFile</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+    {
+      <span class="ruby-value">:preferenceFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">preferenceFile</span>, <span class="ruby-string">&quot;rb&quot;</span>),
+      <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+      <span class="ruby-value">:preferenceFilePath</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'preferenceFilePath'</span>],
+      <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'description'</span>]
+    },
+    <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+    )
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;e-----#{e}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> =<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recommendMultipart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recommendMultipart-method -->
+
+    
+      <div id="method-i-recommendMultipartStream" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recommendMultipartStream</span><span
+            class="method-args">(signature, url, params, post_params, inputStream)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recommendMultipartStream-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 533</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recommendMultipartStream</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">inputStream</span>)
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+        <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+        <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+        <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+          {
+            <span class="ruby-value">:preferenceFile</span> =<span class="ruby-operator">&gt;</span>  <span class="ruby-identifier">inputStream</span>,
+            <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+            <span class="ruby-value">:preferenceFilePath</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'preferenceFilePath'</span>],
+            <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'description'</span>]
+          },
+          <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+          <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+          <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+          )
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+
+        <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;e-----#{e}&quot;</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+            <span class="ruby-identifier">jsonObj</span> =<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+          <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- recommendMultipartStream-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recommendMultipartStream-method -->
+
+    
+      <div id="method-i-shopMultipart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shopMultipart</span><span
+            class="method-args">(signature, url, params, post_params, imageFile)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="shopMultipart-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/connection/RESTConnection.rb, line 440</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shopMultipart</span>(<span class="ruby-identifier">signature</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">post_params</span>, <span class="ruby-identifier">imageFile</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">store</span>(<span class="ruby-string">&quot;signature&quot;</span>, <span class="ruby-identifier">signature</span>)
+  <span class="ruby-identifier">resource</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span>()
+  <span class="ruby-identifier">resource</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">url</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">resource</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">&quot;%20&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Connection to URL #{resource}&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span>( <span class="ruby-identifier">resource</span>,
+    {
+      <span class="ruby-value">:imageFile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">imageFile</span>,
+      <span class="ruby-value">:itemId</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'itemId'</span>],
+      <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'name'</span>],
+      <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'description'</span>],
+      <span class="ruby-value">:price</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">post_params</span>[<span class="ruby-string">'price'</span>],
+    },
+    <span class="ruby-value">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/json'</span>,
+    <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>
+    )
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">to_str</span>
+
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;e-----#{e}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code!</span>=<span class="ruby-value">200</span>
+      <span class="ruby-identifier">jsonObj</span> =<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">404</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42NotFoundException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">400</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42BadParameterException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">401</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42SecurityException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">413</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42LimitException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-value">1413</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">500</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'details'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>,<span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">'app42Fault'</span>][<span class="ruby-string">'appErrorCode'</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">App42Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;We are sorry something has gone wrong on our side&quot;</span>, <span class="ruby-value">500</span>, <span class="ruby-value">1500</span>);
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- shopMultipart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- shopMultipart-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

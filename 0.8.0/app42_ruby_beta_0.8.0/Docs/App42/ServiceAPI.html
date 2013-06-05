@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42::ServiceAPI - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-buildAlbumService">#buildAlbumService</a>
+    
+    <li><a href="#method-i-buildCartService">#buildCartService</a>
+    
+    <li><a href="#method-i-buildCatalogueService">#buildCatalogueService</a>
+    
+    <li><a href="#method-i-buildEmailService">#buildEmailService</a>
+    
+    <li><a href="#method-i-buildGameService">#buildGameService</a>
+    
+    <li><a href="#method-i-buildGeoService">#buildGeoService</a>
+    
+    <li><a href="#method-i-buildImageProcessorService">#buildImageProcessorService</a>
+    
+    <li><a href="#method-i-buildLogService">#buildLogService</a>
+    
+    <li><a href="#method-i-buildPhotoService">#buildPhotoService</a>
+    
+    <li><a href="#method-i-buildQueueService">#buildQueueService</a>
+    
+    <li><a href="#method-i-buildRecommendService">#buildRecommendService</a>
+    
+    <li><a href="#method-i-buildReviewService">#buildReviewService</a>
+    
+    <li><a href="#method-i-buildRewardService">#buildRewardService</a>
+    
+    <li><a href="#method-i-buildScoreBoardService">#buildScoreBoardService</a>
+    
+    <li><a href="#method-i-buildScoreService">#buildScoreService</a>
+    
+    <li><a href="#method-i-buildSessionService">#buildSessionService</a>
+    
+    <li><a href="#method-i-buildSocialService">#buildSocialService</a>
+    
+    <li><a href="#method-i-buildStorageService">#buildStorageService</a>
+    
+    <li><a href="#method-i-buildUploadService">#buildUploadService</a>
+    
+    <li><a href="#method-i-buildUserService">#buildUserService</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../App42.html">App42</a>
+  
+    <li><a href="../App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="../App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="../App42/Email.html">App42::Email</a>
+  
+    <li><a href="../App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="../App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="../App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="../App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="../App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="../App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="../App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="../App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="../App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="../App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="../App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="../App42/Game.html">App42::Game</a>
+  
+    <li><a href="../App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="../App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="../App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="../App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="../App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="../App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="../App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="../App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="../App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="../App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="../App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="../App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="../App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="../App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="../App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="../App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="../App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="../App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="../App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="../App42/Log.html">App42::Log</a>
+  
+    <li><a href="../App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="../App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="../App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="../App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="../App42/Message.html">App42::Message</a>
+  
+    <li><a href="../App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="../App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="../App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="../App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="../App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="../App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="../App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="../App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="../App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="../App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="../App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="../App42/Review.html">App42::Review</a>
+  
+    <li><a href="../App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="../App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="../App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="../App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="../App42/Session.html">App42::Session</a>
+  
+    <li><a href="../App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="../App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="../App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="../App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="../App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="../App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="../App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="../App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="../App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="../App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="../App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="../App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="../App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="../App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="../App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="../App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="../App42/Social.html">App42::Social</a>
+  
+    <li><a href="../App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="../App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="../App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="../App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="../App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="../App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="../App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="../App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="../App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="../App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="../App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="../App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="../App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="../App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="../App42/User.html">App42::User</a>
+  
+    <li><a href="../App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="../App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="../App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="../App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="../App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="../App42/Util.html">App42::Util</a>
+  
+    <li><a href="../App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="../App42Exception.html">App42Exception</a>
+  
+    <li><a href="../App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="../App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="../App42Response.html">App42Response</a>
+  
+    <li><a href="../App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="../App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42::ServiceAPI</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-accept" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">accept</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-api_key" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">api_key</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-base_url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">base_url</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-content_type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">content_type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-secret_key" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">secret_key</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(api_key, secret_key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Initializer Called &quot;</span>
+  <span class="ruby-ivar">@api_key</span> = <span class="ruby-identifier">api_key</span>
+  <span class="ruby-ivar">@secret_key</span> = <span class="ruby-identifier">secret_key</span>
+  <span class="ruby-ivar">@base_url</span> = <span class="ruby-string">&quot;https://api.shephertz.com/cloud/&quot;</span>
+  <span class="ruby-ivar">@content_type</span> = <span class="ruby-string">&quot;application/json&quot;</span>
+  <span class="ruby-ivar">@accept</span> = <span class="ruby-string">&quot;application/json&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-buildAlbumService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildAlbumService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildAlbumService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildAlbumService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Album service Called &quot;</span>
+  <span class="ruby-identifier">album</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Gallery</span><span class="ruby-operator">::</span><span class="ruby-constant">AlbumService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">album</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildAlbumService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildAlbumService-method -->
+
+    
+      <div id="method-i-buildCartService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildCartService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildCartService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildCartService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Cart Called &quot;</span>
+  <span class="ruby-identifier">cart</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Shopping</span><span class="ruby-operator">::</span><span class="ruby-constant">CartService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">cart</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildCartService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildCartService-method -->
+
+    
+      <div id="method-i-buildCatalogueService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildCatalogueService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildCatalogueService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildCatalogueService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Catalogue service Called &quot;</span>
+  <span class="ruby-identifier">catalogue</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Shopping</span><span class="ruby-operator">::</span><span class="ruby-constant">CatalogueService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">catalogue</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildCatalogueService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildCatalogueService-method -->
+
+    
+      <div id="method-i-buildEmailService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildEmailService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildEmailService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildEmailService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build email service Called &quot;</span>
+  <span class="ruby-identifier">email</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Email</span><span class="ruby-operator">::</span><span class="ruby-constant">EmailService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">email</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildEmailService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildEmailService-method -->
+
+    
+      <div id="method-i-buildGameService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildGameService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildGameService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildGameService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Game service Called &quot;</span>
+  <span class="ruby-identifier">game</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Game</span><span class="ruby-operator">::</span><span class="ruby-constant">GameService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">game</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildGameService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildGameService-method -->
+
+    
+      <div id="method-i-buildGeoService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildGeoService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildGeoService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildGeoService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Geo service Called &quot;</span>
+  <span class="ruby-identifier">geo</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Geo</span><span class="ruby-operator">::</span><span class="ruby-constant">GeoService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">geo</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildGeoService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildGeoService-method -->
+
+    
+      <div id="method-i-buildImageProcessorService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildImageProcessorService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildImageProcessorService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildImageProcessorService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Image Processor service Called &quot;</span>
+  <span class="ruby-identifier">image</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">ImageProcessor</span><span class="ruby-operator">::</span><span class="ruby-constant">ImageProcessorService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">image</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildImageProcessorService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildImageProcessorService-method -->
+
+    
+      <div id="method-i-buildLogService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildLogService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildLogService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildLogService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Log service Called &quot;</span>
+  <span class="ruby-identifier">log</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Log</span><span class="ruby-operator">::</span><span class="ruby-constant">LogService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">log</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildLogService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildLogService-method -->
+
+    
+      <div id="method-i-buildPhotoService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildPhotoService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildPhotoService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildPhotoService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Photo service Called &quot;</span>
+  <span class="ruby-identifier">photo</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Gallery</span><span class="ruby-operator">::</span><span class="ruby-constant">PhotoService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">photo</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildPhotoService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildPhotoService-method -->
+
+    
+      <div id="method-i-buildQueueService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildQueueService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildQueueService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildQueueService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Queue service Called &quot;</span>
+  <span class="ruby-identifier">queue</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Message</span><span class="ruby-operator">::</span><span class="ruby-constant">QueueService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">queue</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildQueueService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildQueueService-method -->
+
+    
+      <div id="method-i-buildRecommendService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildRecommendService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildRecommendService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildRecommendService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Recommender service Called &quot;</span>
+  <span class="ruby-identifier">recommend</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Recommend</span><span class="ruby-operator">::</span><span class="ruby-constant">RecommenderService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">recommend</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildRecommendService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildRecommendService-method -->
+
+    
+      <div id="method-i-buildReviewService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildReviewService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildReviewService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildReviewService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Review Called &quot;</span>
+  <span class="ruby-identifier">review</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Review</span><span class="ruby-operator">::</span><span class="ruby-constant">ReviewService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">review</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildReviewService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildReviewService-method -->
+
+    
+      <div id="method-i-buildRewardService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildRewardService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildRewardService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildRewardService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Reward service Called &quot;</span>
+  <span class="ruby-identifier">reward</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Game</span><span class="ruby-operator">::</span><span class="ruby-constant">RewardService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">reward</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildRewardService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildRewardService-method -->
+
+    
+      <div id="method-i-buildScoreBoardService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildScoreBoardService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildScoreBoardService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildScoreBoardService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Score Board service Called &quot;</span>
+  <span class="ruby-identifier">scoreboard</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Game</span><span class="ruby-operator">::</span><span class="ruby-constant">ScoreBoardService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">scoreboard</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildScoreBoardService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildScoreBoardService-method -->
+
+    
+      <div id="method-i-buildScoreService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildScoreService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildScoreService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildScoreService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Score service Called &quot;</span>
+  <span class="ruby-identifier">score</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Game</span><span class="ruby-operator">::</span><span class="ruby-constant">ScoreService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">score</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildScoreService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildScoreService-method -->
+
+    
+      <div id="method-i-buildSessionService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildSessionService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildSessionService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildSessionService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Session Called &quot;</span>
+  <span class="ruby-identifier">session</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">SessionService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">session</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildSessionService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildSessionService-method -->
+
+    
+      <div id="method-i-buildSocialService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildSocialService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildSocialService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildSocialService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build social Called &quot;</span>
+  <span class="ruby-identifier">social</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Social</span><span class="ruby-operator">::</span><span class="ruby-constant">SocialService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">social</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildSocialService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildSocialService-method -->
+
+    
+      <div id="method-i-buildStorageService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildStorageService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildStorageService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildStorageService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build Storage service Called &quot;</span>
+  <span class="ruby-identifier">storage</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Storage</span><span class="ruby-operator">::</span><span class="ruby-constant">StorageService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">storage</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildStorageService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildStorageService-method -->
+
+    
+      <div id="method-i-buildUploadService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildUploadService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildUploadService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildUploadService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;upload Storage service Called &quot;</span>
+  <span class="ruby-identifier">upload</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">Upload</span><span class="ruby-operator">::</span><span class="ruby-constant">UploadService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">upload</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildUploadService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildUploadService-method -->
+
+    
+      <div id="method-i-buildUserService" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildUserService</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buildUserService-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/ServiceAPI.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildUserService</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Build User Called &quot;</span>
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">App42</span><span class="ruby-operator">::</span><span class="ruby-constant">User</span><span class="ruby-operator">::</span><span class="ruby-constant">UserService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">secret_key</span>, <span class="ruby-identifier">base_url</span>)
+  <span class="ruby-identifier">user</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildUserService-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildUserService-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

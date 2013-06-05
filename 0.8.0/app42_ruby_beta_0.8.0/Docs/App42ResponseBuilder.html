@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
+
+<title>class App42ResponseBuilder - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>com/shephertz/app42/paas/sdk/ruby/App42ResponseBuilder.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-buildObjectFromJSONTree">#buildObjectFromJSONTree</a>
+    
+    <li><a href="#method-i-getNames">#getNames</a>
+    
+    <li><a href="#method-i-getServiceJSONObject">#getServiceJSONObject</a>
+    
+    <li><a href="#method-i-getTotalRecords">#getTotalRecords</a>
+    
+    <li><a href="#method-i-isResponseSuccess">#isResponseSuccess</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./App42.html">App42</a>
+  
+    <li><a href="./App42/Connection.html">App42::Connection</a>
+  
+    <li><a href="./App42/Connection/RESTConnection.html">App42::Connection::RESTConnection</a>
+  
+    <li><a href="./App42/Email.html">App42::Email</a>
+  
+    <li><a href="./App42/Email/Configuration.html">App42::Email::Configuration</a>
+  
+    <li><a href="./App42/Email/Email.html">App42::Email::Email</a>
+  
+    <li><a href="./App42/Email/EmailMIME.html">App42::Email::EmailMIME</a>
+  
+    <li><a href="./App42/Email/EmailResponseBuilder.html">App42::Email::EmailResponseBuilder</a>
+  
+    <li><a href="./App42/Email/EmailService.html">App42::Email::EmailService</a>
+  
+    <li><a href="./App42/Gallery.html">App42::Gallery</a>
+  
+    <li><a href="./App42/Gallery/Album.html">App42::Gallery::Album</a>
+  
+    <li><a href="./App42/Gallery/AlbumResponseBuilder.html">App42::Gallery::AlbumResponseBuilder</a>
+  
+    <li><a href="./App42/Gallery/AlbumService.html">App42::Gallery::AlbumService</a>
+  
+    <li><a href="./App42/Gallery/Photo.html">App42::Gallery::Photo</a>
+  
+    <li><a href="./App42/Gallery/PhotoService.html">App42::Gallery::PhotoService</a>
+  
+    <li><a href="./App42/Game.html">App42::Game</a>
+  
+    <li><a href="./App42/Game/Game.html">App42::Game::Game</a>
+  
+    <li><a href="./App42/Game/GameResponseBuilder.html">App42::Game::GameResponseBuilder</a>
+  
+    <li><a href="./App42/Game/GameService.html">App42::Game::GameService</a>
+  
+    <li><a href="./App42/Game/Reward.html">App42::Game::Reward</a>
+  
+    <li><a href="./App42/Game/RewardResponseBuilder.html">App42::Game::RewardResponseBuilder</a>
+  
+    <li><a href="./App42/Game/RewardService.html">App42::Game::RewardService</a>
+  
+    <li><a href="./App42/Game/Score.html">App42::Game::Score</a>
+  
+    <li><a href="./App42/Game/ScoreBoardService.html">App42::Game::ScoreBoardService</a>
+  
+    <li><a href="./App42/Game/ScoreService.html">App42::Game::ScoreService</a>
+  
+    <li><a href="./App42/Geo.html">App42::Geo</a>
+  
+    <li><a href="./App42/Geo/Geo.html">App42::Geo::Geo</a>
+  
+    <li><a href="./App42/Geo/GeoPoint.html">App42::Geo::GeoPoint</a>
+  
+    <li><a href="./App42/Geo/GeoResponseBuilder.html">App42::Geo::GeoResponseBuilder</a>
+  
+    <li><a href="./App42/Geo/GeoService.html">App42::Geo::GeoService</a>
+  
+    <li><a href="./App42/Geo/Point.html">App42::Geo::Point</a>
+  
+    <li><a href="./App42/ImageProcessor.html">App42::ImageProcessor</a>
+  
+    <li><a href="./App42/ImageProcessor/Image.html">App42::ImageProcessor::Image</a>
+  
+    <li><a href="./App42/ImageProcessor/ImageProcessorResponseBuilder.html">App42::ImageProcessor::ImageProcessorResponseBuilder</a>
+  
+    <li><a href="./App42/ImageProcessor/ImageProcessorService.html">App42::ImageProcessor::ImageProcessorService</a>
+  
+    <li><a href="./App42/Log.html">App42::Log</a>
+  
+    <li><a href="./App42/Log/Log.html">App42::Log::Log</a>
+  
+    <li><a href="./App42/Log/LogResponseBuilder.html">App42::Log::LogResponseBuilder</a>
+  
+    <li><a href="./App42/Log/LogService.html">App42::Log::LogService</a>
+  
+    <li><a href="./App42/Log/Message.html">App42::Log::Message</a>
+  
+    <li><a href="./App42/Message.html">App42::Message</a>
+  
+    <li><a href="./App42/Message/Message.html">App42::Message::Message</a>
+  
+    <li><a href="./App42/Message/Queue.html">App42::Message::Queue</a>
+  
+    <li><a href="./App42/Message/QueueResponseBuilder.html">App42::Message::QueueResponseBuilder</a>
+  
+    <li><a href="./App42/Message/QueueService.html">App42::Message::QueueService</a>
+  
+    <li><a href="./App42/Recommend.html">App42::Recommend</a>
+  
+    <li><a href="./App42/Recommend/PreferenceData.html">App42::Recommend::PreferenceData</a>
+  
+    <li><a href="./App42/Recommend/RecommendedItem.html">App42::Recommend::RecommendedItem</a>
+  
+    <li><a href="./App42/Recommend/Recommender.html">App42::Recommend::Recommender</a>
+  
+    <li><a href="./App42/Recommend/RecommenderResponseBuilder.html">App42::Recommend::RecommenderResponseBuilder</a>
+  
+    <li><a href="./App42/Recommend/RecommenderService.html">App42::Recommend::RecommenderService</a>
+  
+    <li><a href="./App42/Recommend/RecommenderSimilarity.html">App42::Recommend::RecommenderSimilarity</a>
+  
+    <li><a href="./App42/Review.html">App42::Review</a>
+  
+    <li><a href="./App42/Review/Review.html">App42::Review::Review</a>
+  
+    <li><a href="./App42/Review/ReviewResponseBuilder.html">App42::Review::ReviewResponseBuilder</a>
+  
+    <li><a href="./App42/Review/ReviewService.html">App42::Review::ReviewService</a>
+  
+    <li><a href="./App42/ServiceAPI.html">App42::ServiceAPI</a>
+  
+    <li><a href="./App42/Session.html">App42::Session</a>
+  
+    <li><a href="./App42/Session/Attribute.html">App42::Session::Attribute</a>
+  
+    <li><a href="./App42/Session/Session.html">App42::Session::Session</a>
+  
+    <li><a href="./App42/Session/SessionResponseBuilder.html">App42::Session::SessionResponseBuilder</a>
+  
+    <li><a href="./App42/Session/SessionService.html">App42::Session::SessionService</a>
+  
+    <li><a href="./App42/Shopping.html">App42::Shopping</a>
+  
+    <li><a href="./App42/Shopping/Cart.html">App42::Shopping::Cart</a>
+  
+    <li><a href="./App42/Shopping/CartResponseBuilder.html">App42::Shopping::CartResponseBuilder</a>
+  
+    <li><a href="./App42/Shopping/CartService.html">App42::Shopping::CartService</a>
+  
+    <li><a href="./App42/Shopping/Catalogue.html">App42::Shopping::Catalogue</a>
+  
+    <li><a href="./App42/Shopping/CatalogueResponseBuilder.html">App42::Shopping::CatalogueResponseBuilder</a>
+  
+    <li><a href="./App42/Shopping/CatalogueService.html">App42::Shopping::CatalogueService</a>
+  
+    <li><a href="./App42/Shopping/Category.html">App42::Shopping::Category</a>
+  
+    <li><a href="./App42/Shopping/Item.html">App42::Shopping::Item</a>
+  
+    <li><a href="./App42/Shopping/ItemData.html">App42::Shopping::ItemData</a>
+  
+    <li><a href="./App42/Shopping/Payment.html">App42::Shopping::Payment</a>
+  
+    <li><a href="./App42/Shopping/PaymentStatus.html">App42::Shopping::PaymentStatus</a>
+  
+    <li><a href="./App42/Social.html">App42::Social</a>
+  
+    <li><a href="./App42/Social/Social.html">App42::Social::Social</a>
+  
+    <li><a href="./App42/Social/SocialResponseBuilder.html">App42::Social::SocialResponseBuilder</a>
+  
+    <li><a href="./App42/Social/SocialService.html">App42::Social::SocialService</a>
+  
+    <li><a href="./App42/Storage.html">App42::Storage</a>
+  
+    <li><a href="./App42/Storage/JSONDocument.html">App42::Storage::JSONDocument</a>
+  
+    <li><a href="./App42/Storage/Storage.html">App42::Storage::Storage</a>
+  
+    <li><a href="./App42/Storage/StorageResponseBuilder.html">App42::Storage::StorageResponseBuilder</a>
+  
+    <li><a href="./App42/Storage/StorageService.html">App42::Storage::StorageService</a>
+  
+    <li><a href="./App42/Upload.html">App42::Upload</a>
+  
+    <li><a href="./App42/Upload/File.html">App42::Upload::File</a>
+  
+    <li><a href="./App42/Upload/Upload.html">App42::Upload::Upload</a>
+  
+    <li><a href="./App42/Upload/UploadFileType.html">App42::Upload::UploadFileType</a>
+  
+    <li><a href="./App42/Upload/UploadResponseBuilder.html">App42::Upload::UploadResponseBuilder</a>
+  
+    <li><a href="./App42/Upload/UploadService.html">App42::Upload::UploadService</a>
+  
+    <li><a href="./App42/User.html">App42::User</a>
+  
+    <li><a href="./App42/User/Profile.html">App42::User::Profile</a>
+  
+    <li><a href="./App42/User/User.html">App42::User::User</a>
+  
+    <li><a href="./App42/User/User/UserGender.html">App42::User::User::UserGender</a>
+  
+    <li><a href="./App42/User/UserResponseBuilder.html">App42::User::UserResponseBuilder</a>
+  
+    <li><a href="./App42/User/UserService.html">App42::User::UserService</a>
+  
+    <li><a href="./App42/Util.html">App42::Util</a>
+  
+    <li><a href="./App42BadParameterException.html">App42BadParameterException</a>
+  
+    <li><a href="./App42Exception.html">App42Exception</a>
+  
+    <li><a href="./App42LimitException.html">App42LimitException</a>
+  
+    <li><a href="./App42NotFoundException.html">App42NotFoundException</a>
+  
+    <li><a href="./App42Response.html">App42Response</a>
+  
+    <li><a href="./App42ResponseBuilder.html">App42ResponseBuilder</a>
+  
+    <li><a href="./App42SecurityException.html">App42SecurityException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class App42ResponseBuilder</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-buildObjectFromJSONTree" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buildObjectFromJSONTree</span><span
+            class="method-args">(obj,jsonObj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param obj @param jsonObj @raise Exception</p>
+          
+
+          
+          <div class="method-source-code" id="buildObjectFromJSONTree-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/App42ResponseBuilder.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buildObjectFromJSONTree</span>(<span class="ruby-identifier">obj</span>,<span class="ruby-identifier">jsonObj</span>)
+  <span class="ruby-identifier">names</span> = <span class="ruby-identifier">getNames</span>(<span class="ruby-identifier">jsonObj</span>)
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">names</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">jsonObj</span>[<span class="ruby-identifier">name</span>]
+    <span class="ruby-identifier">fieldName</span> = <span class="ruby-string">&quot;@&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">name</span>
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:&quot;#{fieldName}&quot;</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buildObjectFromJSONTree-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buildObjectFromJSONTree-method -->
+
+    
+      <div id="method-i-getNames" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getNames</span><span
+            class="method-args">(obj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="getNames-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/App42ResponseBuilder.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getNames</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">names</span> = []
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># puts&quot;key is #{key}&quot;  # key holds the key, value holds the value</span>
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">names</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getNames-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getNames-method -->
+
+    
+      <div id="method-i-getServiceJSONObject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getServiceJSONObject</span><span
+            class="method-args">(serviceName,json)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param serviceName @param json @return @raise Exception</p>
+          
+
+          
+          <div class="method-source-code" id="getServiceJSONObject-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/App42ResponseBuilder.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getServiceJSONObject</span>(<span class="ruby-identifier">serviceName</span>,<span class="ruby-identifier">json</span>)
+  <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">jsonObjApp42</span> = <span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">&quot;app42&quot;</span>]
+  <span class="ruby-identifier">jsonObjResponse</span> = <span class="ruby-identifier">jsonObjApp42</span>[<span class="ruby-string">&quot;response&quot;</span>]
+  <span class="ruby-identifier">jsonObjService</span> = <span class="ruby-identifier">jsonObjResponse</span>[<span class="ruby-node">&quot;#{serviceName}&quot;</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">jsonObjService</span>;
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getServiceJSONObject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getServiceJSONObject-method -->
+
+    
+      <div id="method-i-getTotalRecords" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTotalRecords</span><span
+            class="method-args">(json)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="getTotalRecords-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/App42ResponseBuilder.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getTotalRecords</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-identifier">totalRecords</span> = <span class="ruby-value">-1</span>;
+  <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">jsonObjApp42</span> = <span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">&quot;app42&quot;</span>]
+  <span class="ruby-identifier">jsonObjResponse</span> = <span class="ruby-identifier">jsonObjApp42</span>[<span class="ruby-string">&quot;response&quot;</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">jsonObjResponse</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">jsonObjResponse</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">&quot;totalRecords&quot;</span>)
+    <span class="ruby-identifier">totalRecords</span> = <span class="ruby-identifier">jsonObjResponse</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-string">&quot;totalRecords&quot;</span>);
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">totalRecords</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getTotalRecords-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getTotalRecords-method -->
+
+    
+      <div id="method-i-isResponseSuccess" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">isResponseSuccess</span><span
+            class="method-args">(json)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param json @return @raise Exception</p>
+          
+
+          
+          <div class="method-source-code" id="isResponseSuccess-source">
+            <pre><span class="ruby-comment"># File com/shephertz/app42/paas/sdk/ruby/App42ResponseBuilder.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">isResponseSuccess</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-identifier">jsonObj</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">jsonObjApp42</span> = <span class="ruby-identifier">jsonObj</span>[<span class="ruby-string">&quot;app42&quot;</span>]
+  <span class="ruby-identifier">jsonObjResponse</span> = <span class="ruby-identifier">jsonObjApp42</span>[<span class="ruby-string">&quot;response&quot;</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">jsonObjResponse</span>[<span class="ruby-string">&quot;success&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- isResponseSuccess-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- isResponseSuccess-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
